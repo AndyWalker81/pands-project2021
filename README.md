@@ -34,14 +34,14 @@ The UCI repository notes that the iris.data file contains errors in two instance
 
 The data set contains of a total of 150 instances consisting of 50 samples from each of three species of Iris (*Iris setosa*, *Iris virginica* and *Iris versicolor*). The data set contains four numeric attributes measured in Fisher's study and one predictive attribute for each instance:
 
-    - sepal length in centimetres (cm)
-    - sepal width in centimetres (cm)
-    - petal width in centimetres (cm)
-    - class:
+- sepal length in centimetres (cm)
+- sepal width in centimetres (cm)
+- petal width in centimetres (cm)
+- class:
 
-        - *Iris setosa*
-        - *Iris virginica*
-        - *Iris versicolor*
+    - *Iris setosa*
+    - *Iris virginica*
+    - *Iris versicolor*
 
 The analysis.py file developed for this project analyses the data set and outputs graphical representations of the data. 
 
