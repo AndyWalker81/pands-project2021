@@ -10,6 +10,7 @@
 This file is the submission README file for the 2021 Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, scope, methodology, examples of interesting analsyes that others have pursued, code, references, and comments. 
 
 The output from the project is a file called analysis.py that:
+
     - outputs a summary of each variable from the data set to a single text file,
     - saves a histogram of each variable to a png file,
     - outputs a scatter plot of each pair of variables.
@@ -17,6 +18,7 @@ The output from the project is a file called analysis.py that:
 ##### Introduction 
 
 Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1]</sup>. The data set used is taken from the UCI Machine Learning Repository<sup>[2]</sup>. The data consists of three files:
+
     - iris.names
     - bezdekIris.data
     - iris.data
@@ -31,13 +33,15 @@ The former file is a description of the data set; the latter two files contain t
 The UCI repository notes that the iris.data file contains errors in two instances in which the data does not match with Fisher's original publication. These errors do not occur in the data contained within the bezdekIris.data file. Therefore, the bezdekIris.data file is used in this project. 
 
 The data set contains of a total of 150 instances consisting of 50 samples from each of three species of Iris (*Iris setosa*, *Iris virginica* and *Iris versicolor*). The data set contains four numeric attributes measured in Fisher's study and one predictive attribute for each instance:
+
     - sepal length in centimetres (cm)
     - sepal width in centimetres (cm)
     - petal width in centimetres (cm)
     - class:
-        -- *Iris setosa*
-        -- *Iris virginica*
-        -- *Iris versicolor*
+
+        - *Iris setosa*
+        - *Iris virginica*
+        - *Iris versicolor*
 
 The analysis.py file developed for this project analyses the data set and outputs graphical representations of the data. 
 
