@@ -8,7 +8,7 @@
 import pandas as pd
 
 # read the data from file, add column headings, and set number of rows to display
-irisData = pd.read_csv('bezdekIris.data', header=None) 
+irisData = pd.read_csv('bezdekIris.data') 
 irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
 pd.set_option('display.max_rows', 150)
 

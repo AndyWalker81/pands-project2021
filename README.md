@@ -21,9 +21,10 @@ Fisher's *Iris* data set is a multivariate data set first published by R A Fishe
     - bezdekIris.data
     - iris.data
     
-The former file is a description of the data set; the latter two files contain the data. The data is in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below:
+The former file is a description of the data set; the latter two files contain the data. The data is in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below as an example:
 
 ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/firstFiveRows.PNG "Iris Data")
+<sub>Figure 1</sub> 
 
 
 The UCI repository notes that the iris.data file contains errors in two instances in which the data does not match with Fisher's original publication. These errors do not occur in the data contained within the bezdekIris.data file. Therefore, the bezdekIris.data file is used in this project. 
@@ -67,7 +68,7 @@ Pandas is is a high-level data manipulation tool built on the Numpy package. Its
 The first stage of the program is to import the data from the downloaded text files, arrange the data, and output to a text file:
 
 ```python
-irisData = pd.read_csv('bezdekIris.data', header=None) 
+irisData = pd.read_csv('bezdekIris.data') 
 irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
 pd.set_option('display.max_rows', 150)
 
@@ -75,6 +76,11 @@ with open('IrisData.txt', "wt") as f:
     f.write(str(irisData))
 ```
 
-The code first uses Pandas to create a DataFrame by importing the bezdekIris.data file using pd.read_csv.
+1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using pd.read_csv. 
+2. The five column headings are defined.
+3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data.
+4. A new .txt file is created and is written with the data from the original file. 
 
-References: https://www.learnpython.org/en/Pandas_Basics
+References: 
+https://www.learnpython.org/en/Pandas_Basics
+https://community.insaid.co/hc/en-us/community/posts/360027461213-pd-read-csv-not-able-to-show-all-rows
