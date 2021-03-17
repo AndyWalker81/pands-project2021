@@ -5,17 +5,17 @@
 
 #### Lecturer -- Andrew Beatty (andrew.beatty@gmit.ie)
 
-##### Summary 
+### Summary 
 
 This file is the submission README file for the 2021 Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, scope, methodology, examples of interesting analsyes that others have pursued, code, references, and comments. 
 
 The output from the project is a file called analysis.py that:
 
-    - outputs a summary of each variable from the data set to a single text file,
-    - saves a histogram of each variable to a png file,
-    - outputs a scatter plot of each pair of variables.
+- outputs a summary of each variable from the data set to a single text file,
+- saves a histogram of each variable to a png file,
+- outputs a scatter plot of each pair of variables.
 
-##### Introduction 
+### Introduction 
 
 Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1]</sup>. The data set used is taken from the UCI Machine Learning Repository<sup>[2]</sup>. The data consists of three files:
 
@@ -45,32 +45,35 @@ The data set contains of a total of 150 instances consisting of 50 samples from 
 
 The analysis.py file developed for this project analyses the data set and outputs graphical representations of the data. 
 
-##### Scope
+### Scope
 
 The scope of is this project is...
 
-#### Methodology
+## Methodology
 
 The methodology is...
 
-#### Examples of interesting analyses
+## Examples of interesting analyses
 
 https://github.com/RitRa/Project2018-iris
 
-### Analysis.py
+## Analysis.py
 
-#### Libraries Used
+The following sections detail the code used in the analysis.py program. 
+
+### Code
+
+#### 1. Import Libraries
 
 1. Pandas (imported as pd). 
 ```python
 import pandas as pd
 ```
-Pandas is is a high-level data manipulation tool built on the Numpy package. Its key data structure is called the DataFrame. DataFrames allow the storing and manipulation of tabular data in rows of observations and columns of variables<sup>[3</sup>.
+Pandas is is a high-level data manipulation tool built on the Numpy package. Its key data structure is called the DataFrame. DataFrames allow the storing and manipulation of tabular data in rows of observations and columns of variables<sup>[3]</sup>.
 
-#### Code
-##### 1. Import Data
+#### 2. Import Data from Fisher's *Iris* data set
 
-The first stage of the program is to import the data from the downloaded text files, arrange the data, and output to a text file:
+The first stage of the program is to import the data from the downloaded files, arrange the data, and output to a text file:
 
 ```python
 irisData = pd.read_csv('bezdekIris.data') 
