@@ -23,7 +23,8 @@ Fisher's *Iris* data set is a multivariate data set first published by R A Fishe
     
 The former file is a description of the data set; the latter two files contain the data. The data is in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below:
 
-(https://github.com/AndyWalker81/PANDS/blob/main/firstFiveRows.PNG "Iris Data")
+![alt text](https://github.com/AndyWalker81/PANDS/blob/main/firstFiveRows.PNG "Iris Data")
+
 
 The UCI repository notes that the iris.data file contains errors in two instances in which the data does not match with Fisher's original publication. These errors do not occur in the data contained within the bezdekIris.data file. Therefore, the bezdekIris.data file is used in this project. 
 
