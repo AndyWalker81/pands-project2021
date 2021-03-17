@@ -24,6 +24,7 @@ Fisher's *Iris* data set is a multivariate data set first published by R A Fishe
 The former file is a description of the data set; the latter two files contain the data. The data is in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below as an example:
 
 ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/firstFiveRows.PNG "Iris Data")
+
 <sub>Figure 1</sub> 
 
 
@@ -34,9 +35,9 @@ The data set contains of a total of 150 instances consisting of 50 samples from 
     - sepal width in centimetres (cm)
     - petal width in centimetres (cm)
     - class:
-        - *Iris setosa*
-        - *Iris virginica*
-        - *Iris versicolor*
+        -- *Iris setosa*
+        -- *Iris virginica*
+        -- *Iris versicolor*
 
 The analysis.py file developed for this project analyses the data set and outputs graphical representations of the data. 
 
