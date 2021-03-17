@@ -19,9 +19,9 @@ The output from the project is a file called analysis.py that:
 
 Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1]</sup>. The data set used is taken from the UCI Machine Learning Repository<sup>[2]</sup>. The data consists of three files:
 
-    - iris.names
-    - bezdekIris.data
-    - iris.data
+- iris.names
+- bezdekIris.data
+- iris.data
     
 The former file is a description of the data set; the latter two files contain the data. The data is in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below as an example:
 
@@ -85,6 +85,8 @@ with open('IrisData.txt', "wt") as f:
 2. The five column headings are defined.
 3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data.
 4. A new .txt file is created and is written with the data from the original file. 
+
+It is noted that the DataFrame contains an Index running from 0 to 149.
 
 References: 
 https://www.learnpython.org/en/Pandas_Basics
