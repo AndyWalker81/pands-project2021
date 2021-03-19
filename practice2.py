@@ -19,36 +19,36 @@ irisVersicolor = irisData[50:100]
 irisVirginica = irisData[100:150]
 
 def sepalLength():
-     x = irisSetosa["Sepal Length"].values.tolist() #https://datatofish.com/convert-pandas-dataframe-to-list/
-     y = irisVersicolor["Sepal Length"].values.tolist()
-     z = irisVirginica["Sepal Length"].values.tolist()
+     x = irisSetosa["Sepal Length"]#.values.tolist() #https://datatofish.com/convert-pandas-dataframe-to-list/
+     y = irisVersicolor["Sepal Length"]#.values.tolist()
+     z = irisVirginica["Sepal Length"]#.values.tolist()
 
      plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
      plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
      #plt.xticks([1, 2, 3, 4])
-     plt.ylabel("Number of Iris")
+     plt.ylabel("Frequency")
      plt.xlabel("Sepal Length")
      plt.savefig("sepalLength.png")
-     
+     plt.show()
+     print ("Length Saved")
 
 def sepalWidth():
-     a = irisSetosa["Sepal Width"].values.tolist() #https://datatofish.com/convert-pandas-dataframe-to-list/
-     b = irisVersicolor["Sepal Width"].values.tolist()
-     c = irisVirginica["Sepal Width"].values.tolist()
+     a = irisSetosa["Sepal Width"]#.values.tolist() #https://datatofish.com/convert-pandas-dataframe-to-list/
+     b = irisVersicolor["Sepal Width"]#.values.tolist()
+     c = irisVirginica["Sepal Width"]#.values.tolist()
      
      plt.hist([a, b, c], stacked = True, color = ["r", "g", "b"]) #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
      plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
      #plt.xticks([1, 2, 3, 4])
-     plt.ylabel("Number of Iris")
+     plt.ylabel("Frequency")
      plt.xlabel("Sepal Width")
      plt.savefig("sepalWidth.png")
-
-
+     plt.show()
+     print ("Width Saved")
 
 sepalLength()
-plt.show()
 sepalWidth()
-plt.show()
+
 
 
 
