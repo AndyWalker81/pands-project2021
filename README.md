@@ -56,6 +56,7 @@ The methodology is...
 ## Examples of interesting analyses
 
 https://github.com/RitRa/Project2018-iris
+https://www.sisense.com/blog/data-visualizations-in-python-and-r/
 
 ## Analysis.py
 
@@ -76,7 +77,7 @@ Pandas is is a high-level data manipulation tool built on the Numpy package. Its
 The first stage of the program is to import the data from the downloaded files, arrange the data, and output to a text file:
 
 ```python
-irisData = pd.read_csv('bezdekIris.data') 
+irisData = pd.read_csv('bezdekIris.data', header = None) 
 irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
 pd.set_option('display.max_rows', 150)
 
@@ -84,7 +85,7 @@ with open('IrisData.txt', "wt") as f:
     f.write(str(irisData))
 ```
 
-1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using pd.read_csv. 
+1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using pd.read_csv. ```header = None``` is used otherwise pandas takes the first row as the header.
 2. The five column headings are defined.
 3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data.
 4. A new .txt file is created and is written with the data from the original file. 
@@ -94,3 +95,4 @@ It is noted that the DataFrame contains an Index running from 0 to 149.
 References: 
 https://www.learnpython.org/en/Pandas_Basics
 https://community.insaid.co/hc/en-us/community/posts/360027461213-pd-read-csv-not-able-to-show-all-rows
+https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-from-file-python-pandas
