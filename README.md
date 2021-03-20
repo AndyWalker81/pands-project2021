@@ -45,6 +45,11 @@ The data set contains of a total of 150 instances consisting of 50 samples from 
 
 The analysis.py file developed for this project analyses the data set and outputs graphical representations of the data. 
 
+##### References
+
+1. Fisher, R. A., (1936) The use of multiple measurements in taxonomic problems, *Annals of Eugenics* [Online] Available at: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x (Accessed 20th March 2021)
+2. UCI (n.d.) *Iris Data Set*, [Online] Available at: http://archive.ics.uci.edu/ml/datasets/Iris (Accessed 20th March 2021)
+
 ### Scope
 
 The scope of is this project is...
@@ -66,11 +71,30 @@ The following sections detail the code used in the analysis.py program.
 
 #### 1. Import Libraries
 
-1. Pandas (imported as pd). 
 ```python
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 ```
-Pandas is is a high-level data manipulation tool built on the Numpy package. Its key data structure is called the DataFrame. DataFrames allow the storing and manipulation of tabular data in rows of observations and columns of variables<sup>[3]</sup>.
+
+1. Pandas 
+
+Pandas is is a high-level data manipulation tool built on the Numpy package. Its key data structure is called the DataFrame. DataFrames allow the storing and manipulation of tabular data in rows of observations and columns of variables<sup>[1]</sup>.
+
+2. Matplotlib (pyplot)
+
+Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python<sup>[2]</sup>. ```matplotlib.pyplot``` is a collection of functions which make some change to a figure: e.g., creates a figure, creates a plotting area in a figure, plots some lines in a plotting area, decorates the plot with labels, etc<sup>[3]</sup>.
+
+3. NumPy
+
+NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices.s<sup>[4]</sup>. 
+
+##### References
+
+1. learnpython.org (n.d.) *Pandas Basics* [Online] Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
+2. Matplotlib (2021) *Matplotlib: Visualization with Python* [Online] Available at: https://matplotlib.org/ (Accessed 20th March 2021)
+3. Matplotlib (2021) *Pyplot tutorial* [Online] Available at: https://matplotlib.org/stable/tutorials/introductory/pyplot.html (Accessed 20th March 2021)
+4. W3Schools (n.d.) *NumPy Introduction* [Online] Available at: https://www.w3schools.com/python/numpy_intro.asp
 
 #### 2. Import Data from Fisher's *Iris* data set
 
