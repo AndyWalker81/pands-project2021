@@ -18,6 +18,11 @@ pd.set_option('display.max_rows', 150)
 with open('irisData.txt', "wt") as f:
      f.write(str(irisData))
 
+# save statistical summary
+summaryIrisData = irisData.describe()
+with open('summaryIrisData.txt', "wt") as f:
+     f.write(str(summaryIrisData))     
+
 # assign each class of Iris to a variable
 irisSetosa = irisData[:50]
 irisVersicolor = irisData[50:100]
