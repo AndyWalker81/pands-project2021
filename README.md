@@ -57,11 +57,13 @@ The scope of is this project is...
 ## Methodology
 
 The methodology is...
+Iterative...will be developed as continue through the project...
 
 ## Examples of interesting analyses
 
 https://github.com/RitRa/Project2018-iris
 https://www.sisense.com/blog/data-visualizations-in-python-and-r/
+https://github.com/vwalsh86/Iris-Data-Set-Project
 
 ## Analysis.py
 
@@ -98,25 +100,54 @@ NumPy is a Python library used for working with arrays. It also has functions fo
 
 #### 2. Import Data from Fisher's *Iris* data set
 
-The first stage of the program is to import the data from the downloaded files, arrange the data, and output to a text file:
+The first stage of the program is to import the data from the downloaded files and arrange the data:
 
 ```python
 irisData = pd.read_csv('bezdekIris.data', header = None) 
 irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
 pd.set_option('display.max_rows', 150)
-
-with open('IrisData.txt', "wt") as f:
-    f.write(str(irisData))
 ```
 
 1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using pd.read_csv. ```header = None``` is used otherwise pandas takes the first row as the header.
 2. The five column headings are defined.
 3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data.
-4. A new .txt file is created and is written with the data from the original file. 
 
-It is noted that the DataFrame contains an Index running from 0 to 149.
+It is noted that the DataFrame will contain an Index running from 0 to 149.
 
 References: 
 https://www.learnpython.org/en/Pandas_Basics
 https://community.insaid.co/hc/en-us/community/posts/360027461213-pd-read-csv-not-able-to-show-all-rows
 https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-from-file-python-pandas
+
+
+#### 2. Save Data to .txt File
+
+Next, the data is saved as irisData.txt:
+
+```python
+with open('IrisData.txt', "wt") as f:
+    f.write(str(irisData))
+```
+
+#### 3. Save Data to .txt File
+
+A summary of the statistical data is saved as summaryIrisData.txt 
+
+```python
+summaryIrisData = irisData.describe()
+with open('summaryIrisData.txt', "wt") as f:
+     f.write(str(summaryIrisData))
+```
+References: 
+https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm
+
+
+
+
+
+
+
+
+## Learnings and Further Points
+
+Use of loops. This was a data set with unchangeable values. However, if a 'live' data set was being used it would be good to automate (e.g. if new data added)
