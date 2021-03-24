@@ -100,7 +100,140 @@ def histograms():
      
 histograms()
   
+# create functions for scatter plots
 
+#https://ourcodingclub.github.io/tutorials/pandas-python-intro/
+def scatters():
+     setosaSepalLength = irisSetosa["Sepal Length"]
+     setosaSepalWidth = irisSetosa["Sepal Width"]
+     setosaPetalLength = irisSetosa["Petal Length"]
+     setosaPetalWidth = irisSetosa["Petal Width"]
+
+     versicolorSepalLength = irisVersicolor["Sepal Length"]
+     versicolorSepalWidth = irisVersicolor["Sepal Width"]
+     versicolorPetalLength = irisVersicolor["Petal Length"]
+     versicolorPetalWidth = irisVersicolor["Petal Width"]
+
+     virginicaSepalLength = irisVirginica["Sepal Length"]
+     virginicaSepalWidth = irisVirginica["Sepal Width"]
+     virginicaPetalLength = irisVirginica["Petal Length"]
+     virginicaPetalWidth = irisVirginica["Petal Width"]
+     
+     def SL():
+          def sepalLengthSepalWidth():
+               plt.scatter(setosaSepalLength, setosaSepalWidth, c = "r")
+               plt.scatter(versicolorSepalLength, versicolorSepalWidth, c = "g")
+               plt.scatter(virginicaSepalLength, virginicaSepalWidth, c = "b")
+               plt.show()
+
+          sepalLengthSepalWidth()
+
+          def sepalLengthPetalLength():
+               plt.scatter(setosaSepalLength, setosaPetalLength, c = "r")
+               plt.scatter(versicolorSepalLength, versicolorPetalLength, c = "g")
+               plt.scatter(virginicaSepalLength, virginicaPetalLength, c = "b")
+               plt.show()
+
+          sepalLengthPetalLength()
+
+          def sepalLengthPetalWidth():
+               plt.scatter(setosaSepalLength, setosaPetalWidth, c = "r")
+               plt.scatter(versicolorSepalLength, versicolorPetalWidth, c = "g")
+               plt.scatter(virginicaSepalLength, virginicaPetalWidth, c = "b")
+               plt.show()
+
+          sepalLengthPetalWidth()
+
+     SL()
+
+     def SW():
+     
+          def sepalWidthSepalLength():
+
+               plt.scatter(setosaSepalWidth, setosaSepalLength, c = "r")
+               plt.scatter(versicolorSepalWidth, versicolorSepalLength, c = "g")
+               plt.scatter(virginicaSepalWidth, virginicaSepalLength, c = "b")
+               plt.show()
+
+          sepalWidthSepalLength()
+
+          def sepalWidthPetalLength():
+
+               plt.scatter(setosaSepalWidth, setosaPetalLength, c = "r")
+               plt.scatter(versicolorSepalWidth, versicolorPetalLength, c = "g")
+               plt.scatter(virginicaSepalWidth, virginicaPetalLength, c = "b")
+               plt.show()
+
+          sepalWidthPetalLength()
+
+          def sepalWidthPetalWidth():
+
+               plt.scatter(setosaSepalWidth, setosaPetalWidth, c = "r")
+               plt.scatter(versicolorSepalWidth, versicolorPetalWidth, c = "g")
+               plt.scatter(virginicaSepalWidth, virginicaPetalWidth, c = "b")
+               plt.show()
+
+          sepalWidthPetalWidth()   
+
+     SW()
+
+     def PL():
+
+          def petalLengthSepalLength():
+               plt.scatter(setosaPetalLength, setosaSepalLength, c = "r")
+               plt.scatter(versicolorPetalLength, versicolorSepalLength, c = "g")
+               plt.scatter(virginicaPetalLength, virginicaSepalLength, c = "b")
+               plt.show()
+
+          petalLengthSepalLength()
+               
+          def petalLengthSepalWidth():
+               plt.scatter(setosaPetalLength, setosaSepalWidth, c = "r")
+               plt.scatter(versicolorPetalLength, versicolorSepalWidth, c = "g")
+               plt.scatter(virginicaPetalLength, virginicaSepalWidth, c = "b")
+               plt.show()
+
+          petalLengthSepalWidth()
+
+          def petalLengthPetalWidth():
+               plt.scatter(setosaPetalLength, setosaPetalWidth, c = "r")
+               plt.scatter(versicolorPetalLength, versicolorPetalWidth, c = "g")
+               plt.scatter(virginicaPetalLength, virginicaPetalWidth, c = "b")
+               plt.show()
+
+          petalLengthPetalWidth()
+
+     PL()
+
+     def PW():
+
+          def petalWidthSepalLength():
+               plt.scatter(setosaPetalWidth, setosaSepalLength, c = "r")
+               plt.scatter(versicolorPetalWidth, versicolorSepalLength, c = "g")
+               plt.scatter(virginicaPetalWidth, virginicaSepalLength, c = "b")
+               plt.show()
+          
+          petalWidthSepalLength()
+
+          def petalWidthSepalWidth():
+               plt.scatter(setosaPetalWidth, setosaSepalWidth, c = "r")
+               plt.scatter(versicolorPetalWidth, versicolorSepalWidth, c = "g")
+               plt.scatter(virginicaPetalWidth, virginicaSepalWidth, c = "b")
+               plt.show()
+
+          petalWidthSepalWidth()  
+
+          def petalWidthPetalLength():
+               plt.scatter(setosaPetalWidth, setosaPetalLength, c = "r")
+               plt.scatter(versicolorPetalWidth, versicolorPetalLength, c = "g")
+               plt.scatter(virginicaPetalWidth, virginicaPetalLength, c = "b")
+               plt.show()
+
+          petalWidthPetalLength()  
+     
+     PW()
+          
+scatters()
 
 
 
