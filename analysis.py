@@ -99,142 +99,143 @@ def histograms():
      petalWidth()
      
 histograms()
-  
-# create functions for scatter plots
+   
+# create numpy arrays from dataset
+setosaArray = irisSetosa.to_numpy()
+versicolorArray = irisVersicolor.to_numpy()
+virginicaArray = irisVirginica.to_numpy()
+irisDataArray = irisData.to_numpy()
+irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class') # create array of column headings
 
-#https://ourcodingclub.github.io/tutorials/pandas-python-intro/
+irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) # deletes last column of data (Class) #https://note.nkmk.me/en/python-numpy-delete/
+irisColumnsArrayNew = np.delete(irisColumnsArray, -1) # deletes last column heading (Class)
+
+# create a function for the scatter plots
+# within this function are four further subfunctions - one for each variable - which ....... 
+# each subfunction deletes the column heading and column data for that particular variable
+# this means that does not calculate the same variable against itself 
 def scatters():
-     setosaSepalLength = irisSetosa["Sepal Length"]
-     setosaSepalWidth = irisSetosa["Sepal Width"]
-     setosaPetalLength = irisSetosa["Petal Length"]
-     setosaPetalWidth = irisSetosa["Petal Width"]
+    
+    def setosaSepalLength():
 
-     versicolorSepalLength = irisVersicolor["Sepal Length"]
-     versicolorSepalWidth = irisVersicolor["Sepal Width"]
-     versicolorPetalLength = irisVersicolor["Petal Length"]
-     versicolorPetalWidth = irisVersicolor["Petal Width"]
+        a = 0 
+        b = 0
 
-     virginicaSepalLength = irisVirginica["Sepal Length"]
-     virginicaSepalWidth = irisVirginica["Sepal Width"]
-     virginicaPetalLength = irisVirginica["Petal Length"]
-     virginicaPetalWidth = irisVirginica["Petal Width"]
-     
-     def SL():
-          def sepalLengthSepalWidth():
-               plt.scatter(setosaSepalLength, setosaSepalWidth, c = "r")
-               plt.scatter(versicolorSepalLength, versicolorSepalWidth, c = "g")
-               plt.scatter(virginicaSepalLength, virginicaSepalWidth, c = "b")
-               plt.show()
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) # deletes first column of data (Sepal Length)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) # deletes first column heading (Sepal Length)    
+        # this is so that the program does not calculate the same variable against itself    
+        
+        while b < (len(irisColumnsArrayNew) - 1):   # e.g. it runs three times
+            x = irisDataArray[0:50:,a] # takes the first column of data from original data set (Sepal Length)
+            y = irisDataArrayNewTwo[0:50,b] # takes first column of data from data set with Sepal Length data removed
+            plt.scatter(x,y, c = "r")
+                                            
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.scatter(x,y, c = "g")
+            
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.scatter(x,y, c = "b")
+            
+            plt.xlabel(irisColumnsArrayNew[a]) # Sepal Length
+            plt.ylabel(irisColumnsArrayNewTwo[b]) #Sepal Width
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+            
+            plt.show()
 
-          sepalLengthSepalWidth()
+            b = (b+1) # increases value of b by 1 each loop. This means that Sepal Length is used for x value but y value moves up by 1 three times
+            
+    setosaSepalLength()
 
-          def sepalLengthPetalLength():
-               plt.scatter(setosaSepalLength, setosaPetalLength, c = "r")
-               plt.scatter(versicolorSepalLength, versicolorPetalLength, c = "g")
-               plt.scatter(virginicaSepalLength, virginicaPetalLength, c = "b")
-               plt.show()
+    def setosaSepalWidth():
+    
+        a = 1
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
 
-          sepalLengthPetalLength()
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.scatter(x,y, c = "r")
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.scatter(x,y, c = "g")
 
-          def sepalLengthPetalWidth():
-               plt.scatter(setosaSepalLength, setosaPetalWidth, c = "r")
-               plt.scatter(versicolorSepalLength, versicolorPetalWidth, c = "g")
-               plt.scatter(virginicaSepalLength, virginicaPetalWidth, c = "b")
-               plt.show()
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.scatter(x,y, c = "b")
 
-          sepalLengthPetalWidth()
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b])   
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])     
+            plt.show()
 
-     SL()
+            b = (b+1)
 
-     def SW():
-     
-          def sepalWidthSepalLength():
+    setosaSepalWidth()
 
-               plt.scatter(setosaSepalWidth, setosaSepalLength, c = "r")
-               plt.scatter(versicolorSepalWidth, versicolorSepalLength, c = "g")
-               plt.scatter(virginicaSepalWidth, virginicaSepalLength, c = "b")
-               plt.show()
+    def setosaPetalLength():
+    
+        a = 2
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
 
-          sepalWidthSepalLength()
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.scatter(x,y, c = "r")
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.scatter(x,y, c = "g")
 
-          def sepalWidthPetalLength():
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.scatter(x,y, c = "b")
 
-               plt.scatter(setosaSepalWidth, setosaPetalLength, c = "r")
-               plt.scatter(versicolorSepalWidth, versicolorPetalLength, c = "g")
-               plt.scatter(virginicaSepalWidth, virginicaPetalLength, c = "b")
-               plt.show()
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b])     
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])   
+            plt.show()
 
-          sepalWidthPetalLength()
+            b = (b+1)
 
-          def sepalWidthPetalWidth():
+    setosaPetalLength()
 
-               plt.scatter(setosaSepalWidth, setosaPetalWidth, c = "r")
-               plt.scatter(versicolorSepalWidth, versicolorPetalWidth, c = "g")
-               plt.scatter(virginicaSepalWidth, virginicaPetalWidth, c = "b")
-               plt.show()
+    def setosaPetalWidth():
+    
+        a = 3
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
 
-          sepalWidthPetalWidth()   
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.scatter(x,y, c = "r")
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.scatter(x,y, c = "g")
 
-     SW()
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.scatter(x,y, c = "b")
 
-     def PL():
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b]) 
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])       
+            plt.show()
 
-          def petalLengthSepalLength():
-               plt.scatter(setosaPetalLength, setosaSepalLength, c = "r")
-               plt.scatter(versicolorPetalLength, versicolorSepalLength, c = "g")
-               plt.scatter(virginicaPetalLength, virginicaSepalLength, c = "b")
-               plt.show()
+            b = (b+1)
 
-          petalLengthSepalLength()
-               
-          def petalLengthSepalWidth():
-               plt.scatter(setosaPetalLength, setosaSepalWidth, c = "r")
-               plt.scatter(versicolorPetalLength, versicolorSepalWidth, c = "g")
-               plt.scatter(virginicaPetalLength, virginicaSepalWidth, c = "b")
-               plt.show()
+    setosaPetalWidth()
 
-          petalLengthSepalWidth()
-
-          def petalLengthPetalWidth():
-               plt.scatter(setosaPetalLength, setosaPetalWidth, c = "r")
-               plt.scatter(versicolorPetalLength, versicolorPetalWidth, c = "g")
-               plt.scatter(virginicaPetalLength, virginicaPetalWidth, c = "b")
-               plt.show()
-
-          petalLengthPetalWidth()
-
-     PL()
-
-     def PW():
-
-          def petalWidthSepalLength():
-               plt.scatter(setosaPetalWidth, setosaSepalLength, c = "r")
-               plt.scatter(versicolorPetalWidth, versicolorSepalLength, c = "g")
-               plt.scatter(virginicaPetalWidth, virginicaSepalLength, c = "b")
-               plt.show()
-          
-          petalWidthSepalLength()
-
-          def petalWidthSepalWidth():
-               plt.scatter(setosaPetalWidth, setosaSepalWidth, c = "r")
-               plt.scatter(versicolorPetalWidth, versicolorSepalWidth, c = "g")
-               plt.scatter(virginicaPetalWidth, virginicaSepalWidth, c = "b")
-               plt.show()
-
-          petalWidthSepalWidth()  
-
-          def petalWidthPetalLength():
-               plt.scatter(setosaPetalWidth, setosaPetalLength, c = "r")
-               plt.scatter(versicolorPetalWidth, versicolorPetalLength, c = "g")
-               plt.scatter(virginicaPetalWidth, virginicaPetalLength, c = "b")
-               plt.show()
-
-          petalWidthPetalLength()  
-     
-     PW()
-          
 scatters()
-
-
-
-
