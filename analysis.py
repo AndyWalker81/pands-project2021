@@ -99,21 +99,17 @@ def histograms():
      petalWidth()
      
 histograms()
-   
+
 # create numpy arrays from dataset
 setosaArray = irisSetosa.to_numpy()
 versicolorArray = irisVersicolor.to_numpy()
 virginicaArray = irisVirginica.to_numpy()
 irisDataArray = irisData.to_numpy()
-irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class') # create array of column headings
+irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
 
 irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) # deletes last column of data (Class) #https://note.nkmk.me/en/python-numpy-delete/
 irisColumnsArrayNew = np.delete(irisColumnsArray, -1) # deletes last column heading (Class)
 
-# create a function for the scatter plots
-# within this function are four further subfunctions - one for each variable - which ....... 
-# each subfunction deletes the column heading and column data for that particular variable
-# this means that does not calculate the same variable against itself 
 def scatters():
     
     def setosaSepalLength():
@@ -129,23 +125,32 @@ def scatters():
             x = irisDataArray[0:50:,a] # takes the first column of data from original data set (Sepal Length)
             y = irisDataArrayNewTwo[0:50,b] # takes first column of data from data set with Sepal Length data removed
             plt.scatter(x,y, c = "r")
-                                            
+                    
             x = irisDataArray[50:100,a]
             y = irisDataArrayNewTwo[50:100,b]
             plt.scatter(x,y, c = "g")
-            
+
             x = irisDataArray[100:150,a]
             y = irisDataArrayNewTwo[100:150,b]
             plt.scatter(x,y, c = "b")
-            
+        
             plt.xlabel(irisColumnsArrayNew[a]) # Sepal Length
             plt.ylabel(irisColumnsArrayNewTwo[b]) #Sepal Width
             plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
             
+            # save each plot as png
+            #https://www.w3schools.com/python/python_conditions.asp
+            if b == 0:
+                plt.savefig("scatter1.png") 
+            elif b == 1: 
+                plt.savefig("scatter2.png")
+            else: 
+                plt.savefig("scatter3.png")
+                
             plt.show()
 
             b = (b+1) # increases value of b by 1 each loop. This means that Sepal Length is used for x value but y value moves up by 1 three times
-            
+          
     setosaSepalLength()
 
     def setosaSepalWidth():
@@ -155,6 +160,48 @@ def scatters():
                 
         irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+        print (irisDataArrayNewTwo)
+        print (irisColumnsArrayNewTwo)
+
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.scatter(x,y, c = "r")
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.scatter(x,y, c = "g")
+
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.scatter(x,y, c = "b")
+
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b])      
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])  
+            
+            if b == 0:
+                plt.savefig("scatter4.png")
+            elif b == 1: 
+                plt.savefig("scatter5.png")
+            else: 
+                plt.savefig("scatter6.png")            
+            
+            plt.show()
+
+            b = (b+1)
+
+    setosaSepalWidth()
+
+    def setosaPetalLength():
+    
+        a = 2
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+        print (irisDataArrayNewTwo)
+        print (irisColumnsArrayNewTwo)
 
         while b < (len(irisColumnsArrayNew) - 1):
             x = irisDataArray[0:50,a]
@@ -172,36 +219,14 @@ def scatters():
             plt.xlabel(irisColumnsArrayNew[a])
             plt.ylabel(irisColumnsArrayNewTwo[b])   
             plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])     
-            plt.show()
-
-            b = (b+1)
-
-    setosaSepalWidth()
-
-    def setosaPetalLength():
-    
-        a = 2
-        b = 0
-                
-        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
-        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
-
-        while b < (len(irisColumnsArrayNew) - 1):
-            x = irisDataArray[0:50,a]
-            y = irisDataArrayNewTwo[0:50,b]
-            plt.scatter(x,y, c = "r")
-                    
-            x = irisDataArray[50:100,a]
-            y = irisDataArrayNewTwo[50:100,b]
-            plt.scatter(x,y, c = "g")
-
-            x = irisDataArray[100:150,a]
-            y = irisDataArrayNewTwo[100:150,b]
-            plt.scatter(x,y, c = "b")
-
-            plt.xlabel(irisColumnsArrayNew[a])
-            plt.ylabel(irisColumnsArrayNewTwo[b])     
-            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])   
+            
+            if b == 0:
+                plt.savefig("scatter7.png")
+            elif b == 1: 
+                plt.savefig("scatter8.png")
+            else: 
+                plt.savefig("scatter9.png")
+                      
             plt.show()
 
             b = (b+1)
@@ -215,6 +240,8 @@ def scatters():
                 
         irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+        print (irisDataArrayNewTwo)
+        print (irisColumnsArrayNewTwo)
 
         while b < (len(irisColumnsArrayNew) - 1):
             x = irisDataArray[0:50,a]
@@ -230,8 +257,16 @@ def scatters():
             plt.scatter(x,y, c = "b")
 
             plt.xlabel(irisColumnsArrayNew[a])
-            plt.ylabel(irisColumnsArrayNewTwo[b]) 
-            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])       
+            plt.ylabel(irisColumnsArrayNewTwo[b])  
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])     
+
+            if b == 0:
+                plt.savefig("scatter10.png")
+            elif b == 1: 
+                plt.savefig("scatter11.png")
+            else: 
+                plt.savefig("scatter12.png")            
+                      
             plt.show()
 
             b = (b+1)
@@ -239,3 +274,6 @@ def scatters():
     setosaPetalWidth()
 
 scatters()
+
+
+
