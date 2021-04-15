@@ -8,6 +8,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns; sns.set_theme() #https://seaborn.pydata.org/generated/seaborn.set_color_codes.html#seaborn.set_color_codes
+
 
 # read dataset and put into dataframe
 irisData = pd.read_csv('bezdekIris.data', header = None)  
@@ -31,13 +33,27 @@ irisVirginica = irisData[100:150]
 # create a function for the histograms
 # within this function are five further functions for each variable which save each histogram to a .png file
 def histograms():
+
+     def irisClass():
+         x = irisSetosa["Class"]
+         y = irisVersicolor["Class"]
+         z = irisVirginica["Class"]
+
+    #plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
+         plt.hist([x, y, z], stacked = True) 
+         plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+         plt.xlabel("Class")
+         plt.ylabel("Frequency")
+         plt.savefig("irisClass.png")
+         plt.show()
      
      def sepalLength():
           x = irisSetosa["Sepal Length"]#https://datatofish.com/convert-pandas-dataframe-to-list/
           y = irisVersicolor["Sepal Length"]
           z = irisVirginica["Sepal Length"]
 
-          plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
+          #plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
+          plt.hist([x, y, z], stacked = True)
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
           plt.xlabel("Sepal Length")
           plt.ylabel("Frequency")
@@ -49,7 +65,8 @@ def histograms():
           y = irisVersicolor["Sepal Width"]
           z = irisVirginica["Sepal Width"]
      
-          plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
+          #plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
+          plt.hist([x, y, z], stacked = True) 
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
           plt.xlabel("Sepal Width")
           plt.ylabel("Frequency")
@@ -61,7 +78,8 @@ def histograms():
           y = irisVersicolor["Petal Length"]
           z = irisVirginica["Petal Length"]
      
-          plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
+          plt.hist([x, y, z], stacked = True) 
+          #plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
           plt.xlabel("Petal Length")
           plt.ylabel("Frequency")
@@ -73,23 +91,12 @@ def histograms():
           y = irisVersicolor["Petal Width"]
           z = irisVirginica["Petal Width"]
      
-          plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
+          plt.hist([x, y, z], stacked = True) 
+          #plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
           plt.xlabel("Petal Width")
           plt.ylabel("Frequency")
           plt.savefig("petalWidth.png")
-          plt.show()
-
-     def irisClass():
-          x = irisSetosa["Class"]
-          y = irisVersicolor["Class"]
-          z = irisVirginica["Class"]
-     
-          plt.hist([x, y, z], stacked = True, color = ["r", "g", "b"]) 
-          plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
-          plt.xlabel("Class")
-          plt.ylabel("Frequency")
-          plt.savefig("irisClass.png")
           plt.show()
 
      irisClass()
@@ -124,15 +131,15 @@ def scatters():
         while b < (len(irisColumnsArrayNew) - 1):   # e.g. it runs three times
             x = irisDataArray[0:50:,a] # takes the first column of data from original data set (Sepal Length)
             y = irisDataArrayNewTwo[0:50,b] # takes first column of data from data set with Sepal Length data removed
-            plt.scatter(x,y, c = "r")
+            plt.scatter(x,y)
                     
             x = irisDataArray[50:100,a]
             y = irisDataArrayNewTwo[50:100,b]
-            plt.scatter(x,y, c = "g")
+            plt.scatter(x,y)
 
             x = irisDataArray[100:150,a]
             y = irisDataArrayNewTwo[100:150,b]
-            plt.scatter(x,y, c = "b")
+            plt.scatter(x,y)
         
             plt.xlabel(irisColumnsArrayNew[a]) # Sepal Length
             plt.ylabel(irisColumnsArrayNewTwo[b]) #Sepal Width
@@ -151,7 +158,7 @@ def scatters():
 
             b = (b+1) # increases value of b by 1 each loop. This means that Sepal Length is used for x value but y value moves up by 1 three times
           
-    setosaSepalLength()
+    #setosaSepalLength()
 
     def setosaSepalWidth():
     
@@ -160,21 +167,19 @@ def scatters():
                 
         irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
-        print (irisDataArrayNewTwo)
-        print (irisColumnsArrayNewTwo)
 
         while b < (len(irisColumnsArrayNew) - 1):
             x = irisDataArray[0:50,a]
             y = irisDataArrayNewTwo[0:50,b]
-            plt.scatter(x,y, c = "r")
+            plt.scatter(x,y)
                     
             x = irisDataArray[50:100,a]
             y = irisDataArrayNewTwo[50:100,b]
-            plt.scatter(x,y, c = "g")
+            plt.scatter(x,y)
 
             x = irisDataArray[100:150,a]
             y = irisDataArrayNewTwo[100:150,b]
-            plt.scatter(x,y, c = "b")
+            plt.scatter(x,y)
 
             plt.xlabel(irisColumnsArrayNew[a])
             plt.ylabel(irisColumnsArrayNewTwo[b])      
@@ -191,7 +196,7 @@ def scatters():
 
             b = (b+1)
 
-    setosaSepalWidth()
+    #setosaSepalWidth()
 
     def setosaPetalLength():
     
@@ -200,21 +205,19 @@ def scatters():
                 
         irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
-        print (irisDataArrayNewTwo)
-        print (irisColumnsArrayNewTwo)
 
         while b < (len(irisColumnsArrayNew) - 1):
             x = irisDataArray[0:50,a]
             y = irisDataArrayNewTwo[0:50,b]
-            plt.scatter(x,y, c = "r")
+            plt.scatter(x,y)
                     
             x = irisDataArray[50:100,a]
             y = irisDataArrayNewTwo[50:100,b]
-            plt.scatter(x,y, c = "g")
+            plt.scatter(x,y)
 
             x = irisDataArray[100:150,a]
             y = irisDataArrayNewTwo[100:150,b]
-            plt.scatter(x,y, c = "b")
+            plt.scatter(x,y)
 
             plt.xlabel(irisColumnsArrayNew[a])
             plt.ylabel(irisColumnsArrayNewTwo[b])   
@@ -231,7 +234,7 @@ def scatters():
 
             b = (b+1)
 
-    setosaPetalLength()
+    #setosaPetalLength()
 
     def setosaPetalWidth():
     
@@ -240,21 +243,19 @@ def scatters():
                 
         irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
-        print (irisDataArrayNewTwo)
-        print (irisColumnsArrayNewTwo)
 
         while b < (len(irisColumnsArrayNew) - 1):
             x = irisDataArray[0:50,a]
             y = irisDataArrayNewTwo[0:50,b]
-            plt.scatter(x,y, c = "r")
+            plt.scatter(x,y)
                     
             x = irisDataArray[50:100,a]
             y = irisDataArrayNewTwo[50:100,b]
-            plt.scatter(x,y, c = "g")
+            plt.scatter(x,y)
 
             x = irisDataArray[100:150,a]
             y = irisDataArrayNewTwo[100:150,b]
-            plt.scatter(x,y, c = "b")
+            plt.scatter(x,y)
 
             plt.xlabel(irisColumnsArrayNew[a])
             plt.ylabel(irisColumnsArrayNewTwo[b])  
@@ -271,9 +272,20 @@ def scatters():
 
             b = (b+1)
 
+    #setosaPetalWidth()
+
+    setosaSepalLength()
+    setosaSepalWidth()
+    setosaPetalLength()
     setosaPetalWidth()
 
 scatters()
 
-
+#sns.set_palette("Paired")
+#https://seaborn.pydata.org/generated/seaborn.pairplot.html
+#https://pythonbasics.org/seaborn-pairplot/ 
+#https://seaborn.pydata.org/tutorial/function_overview.html
+sns.pairplot(irisData, hue = "Class", diag_kind="hist")  
+plt.savefig("matrix.png")
+plt.show()
 
