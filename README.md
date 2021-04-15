@@ -5,7 +5,7 @@
 
 #### Lecturer -- Andrew Beatty (andrew.beatty@gmit.ie)
 
-### 1. Summary 
+## 1. Summary 
 
 This file is the submission README file for the 2021 Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, scope, methodology, examples of interesting analsyes that others have pursued, code, references, and comments. 
 
@@ -17,7 +17,7 @@ The output from the project is a program called analysis.py that:
 
 In addition, the program generates a text file showing the original data in a more easily-readable format.
 
-### 2. Introduction to the Data Set
+## 2. Introduction to the Data Set
 
 Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1]</sup>. The data set contains of a total of 150 instances consisting of 50 samples from each of three species of Iris (*Iris setosa*, *Iris virginica* and *Iris versicolor*). The data set contains four numeric attributes measured in Fisher's study and one predictive attribute for each instance:
 
@@ -63,6 +63,27 @@ The former file is a description of the data set; the latter two files contain t
 <sub>Figure 1</sub> 
 
 The UCI repository notes that the iris.data file contains errors in two instances in which the data does not match with Fisher's original publication. These errors do not occur in the data contained within the bezdekIris.data file. Therefore, the bezdekIris.data file is used in this project. 
+
+### Required Outputs
+
+Based on the project task and research into how previous analyses were conducted, it was determined that the output would be:
+
+- A summary output of the data set.
+    - Uncertainty as to what exactly was required. Therefore......1) summary of mean etc. 2) more easily readable table
+
+- Five histograms showing the freqency that each of the following variables occured:
+    - Class 
+    - Sepal Length
+    - Sepal Width
+    - Petal Length
+    - Petal Width
+
+- Twelve scatter plots with each variable....
+    - Add table?
+
+- A scatter matrix 
+
+
 
 ### Programming the Code
 
