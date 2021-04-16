@@ -121,6 +121,14 @@ Each stage is completed to a working level before moving to the next. However, w
 
 ## 4. The Program Code
 
+### Full Code
+
+The full code is displayed below. A breakdown of each section of code is provided in the following sections
+
+
+
+### Breakdown of Code
+
 The following sections detail the code used in the analysis.py program. 
 
 ### 1. Import Libraries
@@ -144,7 +152,9 @@ Matplotlib is a comprehensive library for creating static, animated, and interac
 
 NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices. <sup>[4]</sup>. 
 
-4. Seaborn is a Python data visualisation library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. <sup>[5]</sup>.
+4. Seaborn 
+
+Seaborn is a Python data visualisation library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. <sup>[5]</sup>.
 
 ##### References
 
