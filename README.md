@@ -78,12 +78,35 @@ Based on the project task and research into how previous analyses were conducted
     - Petal Length
     - Petal Width
 
-- Twelve scatter plots with each variable....
-    - Add table?
+- Twelve scatter plots showing each numeric variable against each other numeric variable
+    - Sepal Length against
+        - Sepal Width
+        - Petal Length 
+        - Petal Width
+
+    - Sepal Width against
+        - Sepal Length
+        - Petal Length
+        - Petal Width
+
+    - Petal Length against
+        - Sepal Length
+        - Sepal Width
+        - Petal Width
+
+    - Petal Width against
+    - Sepal Length
+    - Sepal Width
+    - Petal Length
 
 - A scatter matrix 
+    - Whilst not specifically required as an output for the project, reviews of previous analyses show a scatter matrix to be a useful method of showing the visual data. A scatter matrix consists of several pair-wise scatter plots of variables presented in a matrix format, as shown in Figure 2:
 
+ ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Scatter Matrix")
 
+<sub>Figure 2/sub> 
+   
+Ref: https://www.originlab.com/doc/Tutorials/ScatterMatrix
 
 ### Programming the Code
 
@@ -93,7 +116,7 @@ Writing the program code is broken down into smaller stages, with the aim to com
 2. Output histograms
 3. Output scatter plots
 
-Within in each stage the programming is an iterative process whereby if it is considered that improvements can be made to code which does provide the required the outputs, then the code is then amended or re-written. Examples of this might be if it is considered that the importing of a library might improve or make the code more efficient, or simply if it is considered that the output charts could be made more attractive if the code was re-written. It is recogised that this approach might involve the re-writing of the same pieces of code, but as a newcomer to Python it was considered that this approach would allow ongoing development and improvement to the program as knowledge grew. 
+Each stage is completed to a working level before moving to the next. However, writing the code is an iterative process whereby if it is considered that later improvements can be made to the working code, then the code is then amended or re-written. Examples of this might be if it is considered that the importing of a library might improve or make the code more efficient, or simply if it is considered that the output charts could be made more attractive if the code was re-written. It is recogised that this approach might involve the re-writing of the same pieces of code, but as a newcomer to Python it is considered that this approach would allow ongoing development and improvement to the program as knowledge grew. 
 
 
 ## 4. The Program Code
@@ -106,6 +129,7 @@ The following sections detail the code used in the analysis.py program.
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns; sns.set_theme() 
 ```
 
 1. Pandas 
@@ -120,6 +144,8 @@ Matplotlib is a comprehensive library for creating static, animated, and interac
 
 NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices.s<sup>[4]</sup>. 
 
+4. Seaborn.....
+
 ##### References
 
 1. learnpython.org (n.d.) *Pandas Basics* [Online] Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
@@ -132,7 +158,7 @@ NumPy is a Python library used for working with arrays. It also has functions fo
 The first stage of the program is to import the data from the downloaded files and arrange the data:
 
 ```python
-irisData = pd.read_csv('bezdekIris.data', header = None) 
+irisData = pd.read_csv('bezdekIris.data', header = None)  
 irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
 pd.set_option('display.max_rows', 150)
 ```
