@@ -127,6 +127,7 @@ The full code is displayed below. A breakdown of each section of code is provide
 
 
 
+
 ### Breakdown of Code
 
 The following sections detail the code used in the analysis.py program. 
@@ -195,9 +196,11 @@ with open('irisData.txt', "wt") as f:
      f.write(str(irisData))
 ```
 
-IMAGE HERE SHOWING HEADER ONLY?
+ ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisData_txt.PNG "Iris Data")
 
-References:
+<sub>Figure 3</sub> 
+
+References: 
 
 #### 4. Output a Summary of Each Variable
 
@@ -209,7 +212,9 @@ with open('summaryIrisData.txt', "wt") as f:
      f.write(str(summaryIrisData))
 ```
 
-IMAGE HERE?
+ ![alt text]https://github.com/AndyWalker81/PANDS/blob/main/irisSummaryData_txt.PNG "Iris Summary Data")
+
+<sub>Figure 4</sub> 
 
 
 References: 
