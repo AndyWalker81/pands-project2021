@@ -189,12 +189,14 @@ https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-fro
 
 #### 3. Save Data to .txt File
 
-Next, the data is saved as irisData.txt. This is in a more readable format than the original downloaded data set:
+Next, the data is saved as irisData.txt. 
 
 ```python
 with open('irisData.txt', "wt") as f:
      f.write(str(irisData))
 ```
+
+This is in a more easily-readable format than the original downloaded data set (shown in Figure 2):
 
  ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisData_txt.PNG "Iris Data")
 
@@ -212,7 +214,7 @@ with open('summaryIrisData.txt', "wt") as f:
      f.write(str(summaryIrisData))
 ```
 
- ![alt text]https://github.com/AndyWalker81/PANDS/blob/main/irisSummaryData_txt.PNG "Iris Summary Data")
+ ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisSummaryData_txt.PNG "Iris Summary Data")
 
 <sub>Figure 4</sub> 
 
@@ -220,13 +222,72 @@ with open('summaryIrisData.txt', "wt") as f:
 References: 
 https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm
 
-#### 5.
+#### 5.Assign Each Class of Iris to a Variable  
+
+The data sets consists of three class of *Iris*, each with 50 samples of data; a list is defined for each class.  
+
+```python
+irisSetosa = irisData[:50]
+irisVersicolor = irisData[50:100]
+irisVirginica = irisData[100:150]
+```
+
+Each variable contains a list of 50 rows of data related to a specific species of *Iris*. This is done to allow the histograms to be developed with a different species for each bar of the chart. 
+
+#### 6. Create a Function for Histograms
+
+```python
+def histograms():
+...
+histograms()
+```
+
+Within this function are five further functions; one for each variable of the data set. 
+
+#### 7. Create a Function to Output Histograms for Each Variable of the Data Set
+
+Five further functions are created within the histogram function:
+
+1. irisClass()
+2. sepalLength()
+3. sepalWidth()
+4. petalLength()
+5. petalWidth()
+
+Each function works in the same manner:
+
+1. The column headings were previously defined in Step 1. 
+2. A further three lists are defined from the lists created in Step 5. 
+    - x, y, and z
+    - The first function creates lists based on data in the Class column. 
+    - The remaining four functions create lists based on data in the remaining four columns.
+3. Using matplotlib, a stacked histogram is created using the three lists (x, y, z)
+4. The histogram is given a title, a legend, x and y labels.
+5. The histogram is saved as a .png file and outputed to the user's screen.
+
+The following code is for the Class column as an example:
+
+```python
+     def irisClass():
+         x = irisSetosa["Class"]
+         y = irisVersicolor["Class"]
+         z = irisVirginica["Class"]
+
+         plt.hist([x, y, z], stacked = True) 
+         plt.title("Frequency of Iris Class")
+         plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+         plt.xlabel("Class")
+         plt.ylabel("Frequency")
+         plt.savefig("irisClass.png")
+         plt.show()
+```
+
+ref: https://datatofish.com/convert-pandas-dataframe-to-list/
+ref: #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
+
+#### 8. 
 
 
-#### 6.
-
-
-#### 7.
 
 
 ## 5. Examples of Outputs
