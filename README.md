@@ -95,16 +95,16 @@ Based on the project task and research into how previous analyses were conducted
         - Petal Width
 
     - Petal Width against
-    - Sepal Length
-    - Sepal Width
-    - Petal Length
+        - Sepal Length
+        - Sepal Width
+        - Petal Length
 
 - A scatter matrix 
     - Whilst not specifically required as an output for the project, reviews of previous analyses show a scatter matrix to be a useful method of showing the visual data. A scatter matrix consists of several pair-wise scatter plots of variables presented in a matrix format, as shown in Figure 2:
 
  ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Scatter Matrix")
 
-<sub>Figure 2/sub> 
+<sub>Figure 2</sub> 
    
 Ref: https://www.originlab.com/doc/Tutorials/ScatterMatrix
 
@@ -142,16 +142,17 @@ Matplotlib is a comprehensive library for creating static, animated, and interac
 
 3. NumPy
 
-NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices.s<sup>[4]</sup>. 
+NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices. <sup>[4]</sup>. 
 
-4. Seaborn.....
+4. Seaborn is a Python data visualisation library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. <sup>[5]</sup>.
 
 ##### References
 
 1. learnpython.org (n.d.) *Pandas Basics* [Online] Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
 2. Matplotlib (2021) *Matplotlib: Visualization with Python* [Online] Available at: https://matplotlib.org/ (Accessed 20th March 2021)
 3. Matplotlib (2021) *Pyplot tutorial* [Online] Available at: https://matplotlib.org/stable/tutorials/introductory/pyplot.html (Accessed 20th March 2021)
-4. W3Schools (n.d.) *NumPy Introduction* [Online] Available at: https://www.w3schools.com/python/numpy_intro.asp
+4. W3Schools (n.d.) *NumPy Introduction* [Online] Available at: https://www.w3schools.com/python/numpy_intro.asp (Accessed 20th March 2021)
+5. Seaborn (2020) *seaborn: statistical data visualization* [Online] Available at: https://seaborn.pydata.org/ (Accessed 14th April 2021)
 
 ### 2. Import Data from Fisher's *Iris* data set
 
@@ -163,7 +164,7 @@ irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','C
 pd.set_option('display.max_rows', 150)
 ```
 
-1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using pd.read_csv. ```header = None``` is used otherwise pandas takes the first row as the header.
+1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using ```pd.read_csv```. ```header = None``` is used otherwise pandas takes the first row as the header.
 2. The five column headings are defined.
 3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data.
 
@@ -177,26 +178,40 @@ https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-fro
 
 #### 3. Save Data to .txt File
 
-Next, the data is saved as irisData.txt:
+Next, the data is saved as irisData.txt. This is in a more readable format than the original downloaded data set:
 
 ```python
-with open('IrisData.txt', "wt") as f:
-    f.write(str(irisData))
+with open('irisData.txt', "wt") as f:
+     f.write(str(irisData))
 ```
 
-#### 3. Save Data to .txt File
+IMAGE HERE SHOWING HEADER ONLY?
 
-A summary of the statistical data is saved as summaryIrisData.txt 
+References:
+
+#### 4. Output a Summary of Each Variable
+
+A summary of the statistical data is saved as summaryIrisData.txt. 
 
 ```python
 summaryIrisData = irisData.describe()
 with open('summaryIrisData.txt', "wt") as f:
      f.write(str(summaryIrisData))
 ```
+
+IMAGE HERE?
+
+
 References: 
 https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm
 
+#### 5.
 
+
+#### 6.
+
+
+#### 7.
 
 
 ## 5. Examples of Outputs
