@@ -68,38 +68,38 @@ The UCI repository notes that the iris.data file contains errors in two instance
 
 Based on the project task and research into how previous analyses were conducted, it was determined that the output would be:
 
-- A summary output of the data set.
+- A summary output of the data set (summaryIrisData.txt).
     - Uncertainty as to what exactly was required. Therefore......1) summary of mean etc. 2) more easily readable table
 
 - Five histograms showing the freqency that each of the following variables occured:
-    - Class 
-    - Sepal Length
-    - Sepal Width
-    - Petal Length
-    - Petal Width
+    - Class (irisClass.png)
+    - Sepal Length (sepalLength.png)
+    - Sepal Width (sepalWidth.png)
+    - Petal Length (petalLength.png)
+    - Petal Width (petalWidth.png)
 
 - Twelve scatter plots showing each numeric variable against each other numeric variable
     - Sepal Length against
-        - Sepal Width
-        - Petal Length 
-        - Petal Width
+        - Sepal Width (scatter1.png)
+        - Petal Length (scatter2.png)
+        - Petal Width (scatter3.png)
 
     - Sepal Width against
-        - Sepal Length
-        - Petal Length
-        - Petal Width
+        - Sepal Length (scatter4.png)
+        - Petal Length (scatter5.png)
+        - Petal Width (scatter6.png)
 
     - Petal Length against
-        - Sepal Length
-        - Sepal Width
-        - Petal Width
+        - Sepal Length (scatter7.png)
+        - Sepal Width (scatter8.png)
+        - Petal Width (scatter9.png)
 
     - Petal Width against
-        - Sepal Length
-        - Sepal Width
-        - Petal Length
+        - Sepal Length (scatter10.png)
+        - Sepal Width (scatter11.png)
+        - Petal Length (scatter12.png)
 
-- A scatter matrix 
+- A scatter matrix (matix.png)
     - Whilst not specifically required as an output for the project, reviews of previous analyses show a scatter matrix to be a useful method of showing the visual data. A scatter matrix consists of several pair-wise scatter plots of variables presented in a matrix format, as shown in Figure 2:
 
  ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Scatter Matrix")
