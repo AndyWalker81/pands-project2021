@@ -386,7 +386,17 @@ Following the setosaSepalLength() function completing, the code then runs a func
 
 Following the completion of this function, two further functions are run with the value of a increasing by 1 each time and the .png files being given individual filenames.
 
-This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. Whilst this data set is relatively small with four numeric variables used, it is recognised that a larger data set might be used. This code would allow further columns of data to be added and would be able to generate further scatter plots with relative ease. 
+This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. A previous iteration of the code took a different approach and the variables were manually inputted into the code. For example:
+
+```python
+def sepalLengthSepalWidth():
+               plt.scatter(setosaSepalLength, setosaSepalWidth)
+               plt.scatter(versicolorSepalLength, versicolorSepalWidth)
+               plt.scatter(virginicaSepalLength, virginicaSepalWidth)
+               plt.show()
+```
+
+Whilst this approach does generate scatter plots with the correct data, each variable for each class of *Iris* must be typed out manually and cross-referenced to ensure that each variable is included against each other. This could lead to errors if a variable was accidently omitted or inputted incorrectly. Furthermore, whilst Fisher's *Iris* data set is relatively small with four numeric variables used, it is recognised that a larger data set might have been used. The code used in the final version of the program would allow further columns of data to be added and would be able to generate further scatter plots with relative ease with relative minor additions to the code. For example, if a new colummn was added and a new column heading was defined, a new function could simply be added with just the value of 'a' being increased by 1 and new filenames for the .png files being defined. However, using the example code from the earlier iteration would mean the manual entry and cross-referencing of variable names with a higher risk of error being made - the more variables used in the data set, the more difficult this would become. 
 
 
 ref: https://www.w3schools.com/python/python_conditions.asp
