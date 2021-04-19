@@ -108,12 +108,10 @@ def histograms():
 histograms()
 
 # create numpy arrays from dataset
-setosaArray = irisSetosa.to_numpy()
-versicolorArray = irisVersicolor.to_numpy()
-virginicaArray = irisVirginica.to_numpy()
 irisDataArray = irisData.to_numpy()
 irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
 
+# remove last column of data and column heading (Class)
 irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) # deletes last column of data (Class) #https://note.nkmk.me/en/python-numpy-delete/
 irisColumnsArrayNew = np.delete(irisColumnsArray, -1) # deletes last column heading (Class)
 
@@ -165,10 +163,10 @@ def scatters():
 
     def setosaSepalWidth():
     
-        a = 1
+        a = 1 # this value increases by 1 in each function so that the next column and heading is deleted 
         b = 0
                 
-        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) # 
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
 
         while b < (len(irisColumnsArrayNew) - 1):
