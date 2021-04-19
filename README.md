@@ -382,13 +382,11 @@ def setosaSepalLength():
 
 Therefore, the setosaSepalLength() function creates three separate scatter plots, with the Sepal Length as the x-axis on each with and the other numeric variables as the y-axis on each.
 
-Following the setosaSepalLength() function completing, the code then runs a function for the next numeric variable (i.e. Sepal Width). This is similar to the setosaSepalLength() function except that the value for a = 1. This means that the second column is deleted from the data set arrays (i.e. Sepal Width). This is so the program does not create a scatter plot calculating the same variable against itself. 
+Following the setosaSepalLength() function completing, the code then runs a function for the next numeric variable (i.e. Sepal Width). This is similar to the setosaSepalLength() function except that the value for a = 1. This means that the second column is deleted from the data set arrays (i.e. Sepal Width). This is so the program does not create a scatter plot calculating the same variable against itself. In addition, the outputted .png files are saved as individual filenames, differing from the previous function.
 
-Following the completion of this function, two further functions are run with the value of a increaing by 1 each time.
+Following the completion of this function, two further functions are run with the value of a increasing by 1 each time and the .png files being given individual filenames.
 
-An earlier iteration of code took a different approach and involved the manual typing in of the x- and y-axis 
-
-This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. Whilst this data set is relatively small with four numeric variables used, it is recognised that a larger data might be used. This code would allow further columns of data to be added and would be able to generate further scatter plots with relative ease. 
+This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. Whilst this data set is relatively small with four numeric variables used, it is recognised that a larger data set might be used. This code would allow further columns of data to be added and would be able to generate further scatter plots with relative ease. 
 
 
 ref: https://www.w3schools.com/python/python_conditions.asp
