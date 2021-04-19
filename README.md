@@ -285,7 +285,114 @@ The following code is for the Class column as an example:
 ref: https://datatofish.com/convert-pandas-dataframe-to-list/
 ref: #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
 
-#### 8. 
+#### 8. Create NumPy Arrays from the Data Set
+
+```python
+irisDataArray = irisData.to_numpy()
+irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
+```
+
+Two NumPy arrays are created; one containing the complete data set (i.e. 150 rows and five columns), and one containing a single row with five columns headings. These arrays are used to create the scatter plots. 
+
+ref: 
+
+#### 9. Remove the Last Column of Data and Column Heading from the Arrays
+
+```python
+irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) 
+irisColumnsArrayNew = np.delete(irisColumnsArray, -1) 
+```
+
+The last column is deleted from each of the two arrays created in the previous step. I.e. the Class column is removed. This is done because data from the Class column is not used in the scatter plots.
+
+ref: https://note.nkmk.me/en/python-numpy-delete/
+
+#### 10. Define a Function for the Scatter Plots:
+
+```python
+def scatters():
+scatters()
+```
+
+Within this function are four further functions; one for each numerical variable of the data set.
+
+#### 11. Create a Function to Output Scatter Plots for Each Numeric Variable of the Data Set
+
+Four further functions are created within the scatters function:
+
+1. setosaSepalLength()
+2. setosaSepalWidth()
+3. setosaPetalLength()
+4. setosaPetalWidth()
+
+The first function is defined as setosaSepalLength() and works as follows:
+
+1. Two variables (a and b) are set, both as 0.
+2. Using the a variable, the first column of data from the arrays is deleted (Sepal Length). This is so the program does not create a scatter plot calculating the same variable against itself.
+3. A while loop is set to run for one less times than the number of columns in the irisDataArryNew array (i.e. it will run three times).
+4. The program then takes the first column of data from the first 50 rows (i.e. *Iris setosa*) of the original data set (i.e. Sepal Length because a = 0), and the first column of data from the the data set with the first column removed (i.e. Sepal Width because b = 0). A scatter plot is created and given title. 
+5. The program then repeats Step 4 with the second 50 rows (i.e. *Iris versicolor*) of the original data set array.
+6. The program then repeats Step 4 with the third 50 rows (i.e. *Iris virginica*) of the original data set array.
+7. The plots are given x-axis label based upon the first column heading from original data set array (i.e. Sepal Length because a = 0) and y-axis label based upon the first column heading from data set array with column removed (i.e. Sepal Width because b = 0)
+9. The value for b will increase by 1. 
+10. While the value for b is lower than 3 then the loop will run another iteration.
+11. Dependant on the value of b, the scatter plots will be saved given a different .png filename. 
+12. The plots are also displayed on screen. 
+
+```python
+def setosaSepalLength():
+
+        a = 0 
+        b = 0
+
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) 
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a)     
+            
+        while b < (len(irisColumnsArrayNew) - 1):  
+            x = irisDataArray[0:50:,a] 
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.title("Distribution of Variables")   
+            plt.scatter(x,y)
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+  
+            plt.xlabel(irisColumnsArrayNew[a]) 
+            plt.ylabel(irisColumnsArrayNewTwo[b]) 
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+            
+            if b == 0:
+                plt.savefig("scatter1.png") 
+            elif b == 1: 
+                plt.savefig("scatter2.png")
+            else: 
+                plt.savefig("scatter3.png")
+                
+            plt.show()
+
+            b = (b+1) 
+```
+
+Therefore, the setosaSepalLength() function creates three separate scatter plots, with the Sepal Length as the x-axis on each with and the other numeric variables as the y-axis on each.
+
+Following the setosaSepalLength() function completing, the code then runs a function for the next numeric variable (i.e. Sepal Width). This is similar to the setosaSepalLength() function except that the value for a = 1. This means that the second column is deleted from the data set arrays (i.e. Sepal Width). This is so the program does not create a scatter plot calculating the same variable against itself. 
+
+Following the completion of this function, two further functions are run with the value of a increaing by 1 each time.
+
+An earlier iteration of code took a different approach and involved the manual typing in of the x- and y-axis 
+
+This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. Whilst this data set is relatively small with four numeric variables used, it is recognised that a larger data might be used. This code would allow further columns of data to be added and would be able to generate further scatter plots with relative ease. 
+
+
+ref: https://www.w3schools.com/python/python_conditions.asp
+
 
 
 
