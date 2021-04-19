@@ -75,7 +75,7 @@ Based on the project task and research into how previous analyses were conducted
     - Class (irisClass.png)
     - Sepal Length (sepalLength.png)
     - Sepal Width (sepalWidth.png)
-    - Petal Length (petalLength.png)gi
+    - Petal Length (petalLength.png)
     - Petal Width (petalWidth.png)
 
 - Twelve scatter plots showing each numeric variable against each other numeric variable
@@ -105,6 +105,8 @@ Based on the project task and research into how previous analyses were conducted
  ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Scatter Matrix")
 
 <sub>Figure 2</sub> 
+
+It is considered that there is some ambiguity as to what was expected to be 'saved' or 'outputed', based on the wording of the Project instructions. Therefore, it is decided to save both histograms and scatter plots to files, and to show both histograms and scatter plots on the user's screen. 
    
 Ref: https://www.originlab.com/doc/Tutorials/ScatterMatrix
 
@@ -123,10 +125,283 @@ Each stage is completed to a working level before moving to the next. However, w
 
 ### Full Code
 
-The full code is displayed below. A breakdown of each section of code is provided in the following sections
+The full code is displayed below (additional comments are included in the associated .py file). A breakdown of each section of code is provided in the following sections
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns; sns.set_theme() 
+
+irisData = pd.read_csv('bezdekIris.data', header = None)  
+irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
+pd.set_option('display.max_rows', 150)
+
+with open('irisData.txt', "wt") as f:
+     f.write(str(irisData))
+
+summaryIrisData = irisData.describe()
+with open('summaryIrisData.txt', "wt") as f:
+     f.write(str(summaryIrisData))     
+
+irisSetosa = irisData[:50]
+irisVersicolor = irisData[50:100]
+irisVirginica = irisData[100:150]
+
+def histograms():
+
+     def irisClass():
+         x = irisSetosa["Class"]
+         y = irisVersicolor["Class"]
+         z = irisVirginica["Class"]
+
+         plt.hist([x, y, z], stacked = True) 
+         plt.title("Frequency of Iris Class")
+         plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+         plt.xlabel("Class")
+         plt.ylabel("Frequency")
+         plt.savefig("irisClass.png")
+         plt.show()
+     
+     def sepalLength():
+          x = irisSetosa["Sepal Length"]
+          y = irisVersicolor["Sepal Length"]
+          z = irisVirginica["Sepal Length"]
+
+          plt.hist([x, y, z], stacked = True)
+          plt.title("Frequency of Sepal Length")
+          plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+          plt.xlabel("Sepal Length")
+          plt.ylabel("Frequency")
+          plt.savefig("sepalLength.png")
+          plt.show()
+     
+     def sepalWidth():
+          x = irisSetosa["Sepal Width"]
+          y = irisVersicolor["Sepal Width"]
+          z = irisVirginica["Sepal Width"]
+     
+          plt.hist([x, y, z], stacked = True) 
+          plt.title("Frequency of Sepal Width")
+          plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+          plt.xlabel("Sepal Width")
+          plt.ylabel("Frequency")
+          plt.savefig("sepalWidth.png")
+          plt.show()
+
+     def petalLength():
+          x = irisSetosa["Petal Length"]
+          y = irisVersicolor["Petal Length"]
+          z = irisVirginica["Petal Length"]
+     
+          plt.hist([x, y, z], stacked = True) 
+          plt.title("Frequency of Petal Length")
+          plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+          plt.xlabel("Petal Length")
+          plt.ylabel("Frequency")
+          plt.savefig("petalLength.png")
+          plt.show()
+
+     def petalWidth():
+          x = irisSetosa["Petal Width"]
+          y = irisVersicolor["Petal Width"]
+          z = irisVirginica["Petal Width"]
+     
+          plt.hist([x, y, z], stacked = True) 
+          plt.title("Frequency of Petal Width")
+          plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+          plt.xlabel("Petal Width")
+          plt.ylabel("Frequency")
+          plt.savefig("petalWidth.png")
+          plt.show()
+
+     irisClass()
+     sepalLength()
+     sepalWidth()
+     petalLength()
+     petalWidth()
+     
+histograms()
+
+irisDataArray = irisData.to_numpy()
+irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
 
 
+irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) 
+irisColumnsArrayNew = np.delete(irisColumnsArray, -1) 
 
+def scatters():
+    
+    def setosaSepalLength():
+
+        a = 0 
+        b = 0
+
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) 
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+         
+        
+        while b < (len(irisColumnsArrayNew) - 1):   
+            x = irisDataArray[0:50:,a] 
+            y = irisDataArrayNewTwo[0:50,b] 
+            plt.title("Distribution of Variables")   
+            plt.scatter(x,y)
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+  
+            plt.xlabel(irisColumnsArrayNew[a]) 
+            plt.ylabel(irisColumnsArrayNewTwo[b]) 
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+            
+            if b == 0:
+                plt.savefig("scatter1.png") 
+            elif b == 1: 
+                plt.savefig("scatter2.png")
+            else: 
+                plt.savefig("scatter3.png")
+                
+            plt.show()
+
+            b = (b+1) 
+          
+    def setosaSepalWidth():
+    
+        a = 1 
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) 
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+            
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b])      
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])  
+            
+            if b == 0:
+                plt.savefig("scatter4.png")
+            elif b == 1: 
+                plt.savefig("scatter5.png")
+            else: 
+                plt.savefig("scatter6.png")            
+            
+            plt.show()
+
+            b = (b+1)
+
+    def setosaPetalLength():
+    
+        a = 2
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b])   
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])     
+            
+            if b == 0:
+                plt.savefig("scatter7.png")
+            elif b == 1: 
+                plt.savefig("scatter8.png")
+            else: 
+                plt.savefig("scatter9.png")
+                      
+            plt.show()
+
+            b = (b+1)
+
+    def setosaPetalWidth():
+    
+        a = 3
+        b = 0
+                
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1)
+        irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
+
+        while b < (len(irisColumnsArrayNew) - 1):
+            x = irisDataArray[0:50,a]
+            y = irisDataArrayNewTwo[0:50,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+                    
+            x = irisDataArray[50:100,a]
+            y = irisDataArrayNewTwo[50:100,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            x = irisDataArray[100:150,a]
+            y = irisDataArrayNewTwo[100:150,b]
+            plt.title("Distribution of Variables") 
+            plt.scatter(x,y)
+
+            plt.xlabel(irisColumnsArrayNew[a])
+            plt.ylabel(irisColumnsArrayNewTwo[b])  
+            plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])     
+
+            if b == 0:
+                plt.savefig("scatter10.png")
+            elif b == 1: 
+                plt.savefig("scatter11.png")
+            else: 
+                plt.savefig("scatter12.png")            
+                      
+            plt.show()
+
+            b = (b+1)
+
+    setosaSepalLength()
+    setosaSepalWidth()
+    setosaPetalLength()
+    setosaPetalWidth()
+
+scatters()
+
+sns.pairplot(irisData, hue = "Class", diag_kind="hist")  
+plt.suptitle("Scatter Matrix for Fisher's Iris Data Set") 
+plt.savefig("matrix.png")
+plt.show()
+
+```
 
 ### Breakdown of Code
 
@@ -380,11 +655,11 @@ def setosaSepalLength():
             b = (b+1) 
 ```
 
-Therefore, the setosaSepalLength() function creates three separate scatter plots, with the Sepal Length as the x-axis on each with and the other numeric variables as the y-axis on each.
+Therefore, the setosaSepalLength() function creates three separate scatter plots, with the Sepal Length as the x-axis on each with and the other numeric variables as the y-axis on each. As the a variable was 0, the first column was not included in the data. This meant that Sepal Length was not plotted against Sepal Length.
 
-Following the setosaSepalLength() function completing, the code then runs a function for the next numeric variable (i.e. Sepal Width). This is similar to the setosaSepalLength() function except that the value for a = 1. This means that the second column is deleted from the data set arrays (i.e. Sepal Width). This is so the program does not create a scatter plot calculating the same variable against itself. In addition, the outputted .png files are saved as individual filenames, differing from the previous function.
+Following the setosaSepalLength() function completing, the code then runs a function for the next numeric variable (i.e. Sepal Width). This is similar to the setosaSepalLength() function except that the value for a increases by 1 (i.e. a now equals 1). This means that the second column is deleted from the data set arrays (i.e. Sepal Width). This is so the program does not create a scatter plot calculating the same variable against itself. In addition, the outputted .png files are saved as individual filenames, differing from the previous function.
 
-Following the completion of this function, two further functions are run with the value of a increasing by 1 each time and the .png files being given individual filenames.
+Following the completion of this function, two further functions are run with the value of a increasing by 1 each time and the .png files being given individual filenames. 
 
 This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. A previous iteration of the code took a different approach and the variables were manually inputted into the code. For example:
 
@@ -401,9 +676,21 @@ Whilst this approach does generate scatter plots with the correct data, each var
 
 ref: https://www.w3schools.com/python/python_conditions.asp
 
+#### 12. Output a Pairplot 
 
+The last section of code generates and saves a pairplot using Seaborn.
 
+```python
+sns.pairplot(irisData, hue = "Class", diag_kind="hist")  
+plt.suptitle("Scatter Matrix for Fisher's Iris Data Set") 
+plt.savefig("matrix.png")
+plt.show()
+```
 
+ref: https://seaborn.pydata.org/generated/seaborn.pairplot.html
+https://pythonbasics.org/seaborn-pairplot/ 
+https://seaborn.pydata.org/tutorial/function_overview.html
+https://www.geeksforgeeks.org/change-axis-labels-set-title-and-figure-size-to-plots-with-seaborn/
 
 ## 5. Examples of Outputs
 
