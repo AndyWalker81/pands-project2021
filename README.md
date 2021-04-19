@@ -75,7 +75,7 @@ Based on the project task and research into how previous analyses were conducted
     - Class (irisClass.png)
     - Sepal Length (sepalLength.png)
     - Sepal Width (sepalWidth.png)
-    - Petal Length (petalLength.png)
+    - Petal Length (petalLength.png)gi
     - Petal Width (petalWidth.png)
 
 - Twelve scatter plots showing each numeric variable against each other numeric variable
