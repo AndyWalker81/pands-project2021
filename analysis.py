@@ -47,11 +47,10 @@ def histograms():
          plt.show()
      
      def sepalLength():
-          x = irisSetosa["Sepal Length"]#https://datatofish.com/convert-pandas-dataframe-to-list/
+          x = irisSetosa["Sepal Length"]
           y = irisVersicolor["Sepal Length"]
           z = irisVirginica["Sepal Length"]
 
-          #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
           plt.hist([x, y, z], stacked = True)
           plt.title("Frequency of Sepal Length")
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
@@ -112,7 +111,7 @@ irisDataArray = irisData.to_numpy()
 irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
 
 # remove last column of data and column heading (Class)
-irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) # deletes last column of data (Class) #https://note.nkmk.me/en/python-numpy-delete/
+irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) # deletes last column of data (Class) 
 irisColumnsArrayNew = np.delete(irisColumnsArray, -1) # deletes last column heading (Class)
 
 def scatters():
@@ -128,7 +127,7 @@ def scatters():
         
         while b < (len(irisColumnsArrayNew) - 1):   # e.g. it runs three times
             x = irisDataArray[0:50:,a] # takes the first column of data from original data set (Sepal Length)
-            y = irisDataArrayNewTwo[0:50,b] # takes first column of data from data set with Sepal Length data removed
+            y = irisDataArrayNewTwo[0:50,b] # takes first column of data from data set with Sepal Length data removed (i.e. Sepal Width)
             plt.title("Distribution of Variables")   
             plt.scatter(x,y)
                     
@@ -142,12 +141,11 @@ def scatters():
             plt.title("Distribution of Variables") 
             plt.scatter(x,y)
   
-            plt.xlabel(irisColumnsArrayNew[a]) # Sepal Length
-            plt.ylabel(irisColumnsArrayNewTwo[b]) #Sepal Width
+            plt.xlabel(irisColumnsArrayNew[a]) 
+            plt.ylabel(irisColumnsArrayNewTwo[b]) 
             plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
             
             # save each plot as png
-            #https://www.w3schools.com/python/python_conditions.asp
             if b == 0:
                 plt.savefig("scatter1.png") 
             elif b == 1: 
@@ -157,16 +155,14 @@ def scatters():
                 
             plt.show()
 
-            b = (b+1) # increases value of b by 1 each loop. This means that Sepal Length is used for x value but y value moves up by 1 three times
+            b = (b+1) # increases value of b by 1 each loop. The x-axis will stay the same for each Class of Iris but the y-axis will change each iteration 
           
-    #setosaSepalLength()
-
     def setosaSepalWidth():
     
         a = 1 # this value increases by 1 in each function so that the next column and heading is deleted 
         b = 0
                 
-        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) # 
+        irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) 
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
 
         while b < (len(irisColumnsArrayNew) - 1):
@@ -199,8 +195,6 @@ def scatters():
             plt.show()
 
             b = (b+1)
-
-    #setosaSepalWidth()
 
     def setosaPetalLength():
     
@@ -241,8 +235,6 @@ def scatters():
 
             b = (b+1)
 
-    #setosaPetalLength()
-
     def setosaPetalWidth():
     
         a = 3
@@ -282,8 +274,6 @@ def scatters():
 
             b = (b+1)
 
-    #setosaPetalWidth()
-
     setosaSepalLength()
     setosaSepalWidth()
     setosaPetalLength()
@@ -291,11 +281,8 @@ def scatters():
 
 scatters()
 
-#sns.set_palette("Paired")
-#https://seaborn.pydata.org/generated/seaborn.pairplot.html
-#https://pythonbasics.org/seaborn-pairplot/ 
-#https://seaborn.pydata.org/tutorial/function_overview.html
-#https://www.geeksforgeeks.org/change-axis-labels-set-title-and-figure-size-to-plots-with-seaborn/
+# Output a pairplot
+
 sns.pairplot(irisData, hue = "Class", diag_kind="hist")  
 plt.suptitle("Scatter Matrix for Fisher's Iris Data Set") 
 plt.savefig("matrix.png")
