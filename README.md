@@ -99,12 +99,9 @@ Based on the project task and research into how previous analyses were conducted
         - Sepal Width (scatter11.png)
         - Petal Length (scatter12.png)
 
-- A scatter matrix (matix.png)
-    - Whilst not specifically required as an output for the project, reviews of previous analyses show a scatter matrix to be a useful method of showing the visual data. A scatter matrix consists of several pair-wise scatter plots of variables presented in a matrix format, as shown in Figure 2:
+- A Pair Plot (matrix.png)
+    - Whilst not specifically required as an output for the project, reviews of previous analyses show a pair plot (or scatter matrix) to be a useful method of showing the visual data. A pair plot consists of several pair-wise scatter plots of variables presented in a matrix format, allowing for an instant visualisation of data. The resultant pair plot from the program can be seen in Figure.....
 
- ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Scatter Matrix")
-
-<sub>Figure 2</sub> 
 
 It is considered that there is some ambiguity as to what was expected to be 'saved' or 'outputed', based on the wording of the Project instructions. Therefore, it is decided to save both histograms and scatter plots to files, and to show both histograms and scatter plots on the user's screen. 
    
@@ -475,7 +472,7 @@ This is in a more easily-readable format than the original downloaded data set (
 
  ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisData_txt.PNG "Iris Data")
 
-<sub>Figure 3</sub> 
+<sub>Figure 2</sub> 
 
 References: 
 
@@ -491,7 +488,7 @@ with open('summaryIrisData.txt', "wt") as f:
 
  ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisSummaryData_txt.PNG "Iris Summary Data")
 
-<sub>Figure 4</sub> 
+<sub>Figure 3</sub> 
 
 
 References: 
@@ -556,6 +553,13 @@ The following code is for the Class column as an example:
          plt.savefig("irisClass.png")
          plt.show()
 ```
+
+The resultant histogram from the above example is shown below:
+
+ ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisClass.png "Frequency of *Iris* Class")
+
+<sub>Figure 4</sub> 
+
 
 ref: https://datatofish.com/convert-pandas-dataframe-to-list/
 ref: #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
@@ -661,6 +665,12 @@ Following the setosaSepalLength() function completing, the code then runs a func
 
 Following the completion of this function, two further functions are run with the value of a increasing by 1 each time and the .png files being given individual filenames. 
 
+A resultant scatter plot from the above example is shown below:
+
+ ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/scatter1.png "Distribution of Variables)
+
+<sub>Figure 5</sub> 
+
 This approach is taken as it results in a program that can automatically generate the scatter plots without the variables being explicitly named. A previous iteration of the code took a different approach and the variables were manually inputted into the code. For example:
 
 ```python
@@ -686,6 +696,13 @@ plt.suptitle("Scatter Matrix for Fisher's Iris Data Set")
 plt.savefig("matrix.png")
 plt.show()
 ```
+
+The resultant pairplot is shown below:
+
+ ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Pair Plot")
+
+<sub>Figure 6</sub> 
+
 
 ref: https://seaborn.pydata.org/generated/seaborn.pairplot.html
 https://pythonbasics.org/seaborn-pairplot/ 
