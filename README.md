@@ -12,10 +12,10 @@ This file is the submission README file for the 2021 Project concerned with Fish
 The output from the project is a program called analysis.py that:
 
 - outputs a summary of each variable from the data set to a single text file,
-- saves a histogram of each variable to a png file,
-- outputs a scatter plot of each pair of variables.
-
-In addition, the program generates a text file showing the original data in a more easily-readable format.
+- outputs a text file showing the original data in a more easily-readable format than in the original file,
+- saves a total of fives histogram - one for each variable - to a separate .png file and displays each histogram on the user's screen,
+- saves a total of twelves scatterplots - one for each pair of numeric variables - to a separate .png file and displays each scatterplot on the user's screen,
+- saves a pair plot showing a visual representation of the numeric variables and displays the pair plot on the user's screen.
 
 ## 2. Introduction to the Data Set
 
@@ -31,11 +31,6 @@ Fisher's *Iris* data set is a multivariate data set first published by R A Fishe
     - *Iris versicolor*
 
 The analysis.py file developed for this project analyses the data set and outputs graphical representations of the data. 
-
-##### References
-
-1. Fisher, R. A., (1936) The use of multiple measurements in taxonomic problems, *Annals of Eugenics* [Online] Available at: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x (Accessed 20th March 2021)
-2. UCI (n.d.) *Iris Data Set*, [Online] Available at: http://archive.ics.uci.edu/ml/datasets/Iris (Accessed 20th March 2021)
 
 ## 3. Methodology
 
@@ -100,13 +95,10 @@ Based on the project task and research into how previous analyses were conducted
         - Petal Length (scatter12.png)
 
 - A Pair Plot (matrix.png)
-    - Whilst not specifically required as an output for the project, reviews of previous analyses show a pair plot (or scatter matrix) to be a useful method of showing the visual data. A pair plot consists of several pair-wise scatter plots of variables presented in a matrix format, allowing for an instant visualisation of data. The resultant pair plot from the program can be seen in Figure.....
-
+    - Reviews of previous analyses show a pair plot (or scatter matrix) to be a useful method of showing the visual data. A pair plot consists of several pair-wise scatter plots of variables presented in a matrix format, allowing for an instant visualisation of data<sup>[3]</sup>. The resultant pair plot from the program can be seen in Figure 6.
 
 It is considered that there is some ambiguity as to what was expected to be 'saved' or 'outputed', based on the wording of the Project instructions. Therefore, it is decided to save both histograms and scatter plots to files, and to show both histograms and scatter plots on the user's screen. 
    
-Ref: https://www.originlab.com/doc/Tutorials/ScatterMatrix
-
 ### Programming the Code
 
 Writing the program code is broken down into smaller stages, with the aim to complete an individual task before moving onto the next. At a high-level, the coding is broken down into the following three stages:
@@ -116,7 +108,6 @@ Writing the program code is broken down into smaller stages, with the aim to com
 3. Output scatter plots
 
 Each stage is completed to a working level before moving to the next. However, writing the code is an iterative process whereby if it is considered that later improvements can be made to the working code, then the code is then amended or re-written. Examples of this might be if it is considered that the importing of a library might improve or make the code more efficient, or simply if it is considered that the output charts could be made more attractive if the code was re-written. It is recogised that this approach might involve the re-writing of the same pieces of code, but as a newcomer to Python it is considered that this approach would allow ongoing development and improvement to the program as knowledge grew. 
-
 
 ## 4. The Program Code
 
@@ -223,7 +214,6 @@ histograms()
 irisDataArray = irisData.to_numpy()
 irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
 
-
 irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) 
 irisColumnsArrayNew = np.delete(irisColumnsArray, -1) 
 
@@ -236,8 +226,7 @@ def scatters():
 
         irisDataArrayNewTwo = np.delete(irisDataArrayNew, a, axis = 1) 
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) 
-         
-        
+                 
         while b < (len(irisColumnsArrayNew) - 1):   
             x = irisDataArray[0:50:,a] 
             y = irisDataArrayNewTwo[0:50,b] 
@@ -415,27 +404,19 @@ import seaborn as sns; sns.set_theme()
 
 1. Pandas 
 
-Pandas is is a high-level data manipulation tool built on the Numpy package. Its key data structure is called the DataFrame. DataFrames allow the storing and manipulation of tabular data in rows of observations and columns of variables<sup>[1]</sup>.
+Pandas is is a high-level data manipulation tool built on the Numpy package. Its key data structure is called the DataFrame. DataFrames allow the storing and manipulation of tabular data in rows of observations and columns of variables<sup>[4]</sup>.
 
 2. Matplotlib (pyplot)
 
-Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python<sup>[2]</sup>. ```matplotlib.pyplot``` is a collection of functions which make some change to a figure: e.g., creates a figure, creates a plotting area in a figure, plots some lines in a plotting area, decorates the plot with labels, etc<sup>[3]</sup>.
+Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python<sup>[5]</sup>. ```matplotlib.pyplot``` is a collection of functions which make some change to a figure: e.g., creates a figure, creates a plotting area in a figure, plots some lines in a plotting area, decorates the plot with labels, etc<sup>[6]</sup>.
 
 3. NumPy
 
-NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices. <sup>[4]</sup>. 
+NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices. <sup>[7]</sup>. 
 
 4. Seaborn 
 
-Seaborn is a Python data visualisation library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. <sup>[5]</sup>.
-
-##### References
-
-1. learnpython.org (n.d.) *Pandas Basics* [Online] Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
-2. Matplotlib (2021) *Matplotlib: Visualization with Python* [Online] Available at: https://matplotlib.org/ (Accessed 20th March 2021)
-3. Matplotlib (2021) *Pyplot tutorial* [Online] Available at: https://matplotlib.org/stable/tutorials/introductory/pyplot.html (Accessed 20th March 2021)
-4. W3Schools (n.d.) *NumPy Introduction* [Online] Available at: https://www.w3schools.com/python/numpy_intro.asp (Accessed 20th March 2021)
-5. Seaborn (2020) *seaborn: statistical data visualization* [Online] Available at: https://seaborn.pydata.org/ (Accessed 14th April 2021)
+Seaborn is a Python data visualisation library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. <sup>[8]</sup>.
 
 ### 2. Import Data from Fisher's *Iris* data set
 
@@ -447,17 +428,11 @@ irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','C
 pd.set_option('display.max_rows', 150)
 ```
 
-1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using ```pd.read_csv```. ```header = None``` is used otherwise pandas takes the first row as the header.
+1. The code first uses Pandas to create a DataFrame (irisData) by importing the bezdekIris.data file using ```pd.read_csv```. ```header = None``` is used otherwise pandas takes the first row as the header<sup>[9, 10]</sup>.
 2. The five column headings are defined.
-3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data.
+3. The number of rows to display (150) is defined. Without the ```python pd.set_option('display.max_rows', 150)``` code the results would be truncated showing only the first five and last five lines of data<sup>[11]</sup>.
 
 It is noted that the DataFrame will contain an Index running from 0 to 149.
-
-References: 
-https://www.learnpython.org/en/Pandas_Basics
-https://community.insaid.co/hc/en-us/community/posts/360027461213-pd-read-csv-not-able-to-show-all-rows
-https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-from-file-python-pandas
-
 
 #### 3. Save Data to .txt File
 
@@ -667,7 +642,7 @@ Following the completion of this function, two further functions are run with th
 
 A resultant scatter plot from the above example is shown below:
 
- ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/scatter1.png "Distribution of Variables)
+![alt text](https://github.com/AndyWalker81/PANDS/blob/main/scatter1.png "Distribution of Variables")
 
 <sub>Figure 5</sub> 
 
@@ -709,17 +684,23 @@ https://pythonbasics.org/seaborn-pairplot/
 https://seaborn.pydata.org/tutorial/function_overview.html
 https://www.geeksforgeeks.org/change-axis-labels-set-title-and-figure-size-to-plots-with-seaborn/
 
-## 5. Examples of Outputs
+## 5. Learnings and Further Points
 
 
-
-## 6. Major iterations
-
-Use of loops. This was a data set with unchangeable values. However, if a 'live' data set was being used it would be good to automate (e.g. if new data added).
-Seaborn - change colours.
-
-## 7. Learnings and Further Points
+## 6. Conclusion
 
 
-## 8. Conclusion
+## 7. References
+
+1. Fisher, R. A., (1936) The use of multiple measurements in taxonomic problems, *Annals of Eugenics* [Online] Available at: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x (Accessed 20th March 2021)
+2. UCI (n.d.) *Iris Data Set*, [Online] Available at: http://archive.ics.uci.edu/ml/datasets/Iris (Accessed 20th March 2021)
+3. Towards Data Science (2018) *Visualizing Data with Pairs Plots in Python* [Online]. Available at: https://www.originlab.com/doc/Tutorials/ScatterMatrix (Accessed 20th April 2021)
+4. learnpython.org (n.d.) *Pandas Basics* [Online] Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
+5. Matplotlib (2021) *Matplotlib: Visualization with Python* [Online] Available at: https://matplotlib.org/ (Accessed 20th March 2021)
+6. Matplotlib (2021) *Pyplot tutorial* [Online] Available at: https://matplotlib.org/stable/tutorials/introductory/pyplot.html (Accessed 20th March 2021)
+7. W3Schools (n.d.) *NumPy Introduction* [Online] Available at: https://www.w3schools.com/python/numpy_intro.asp (Accessed 20th March 2021)
+8. Seaborn (2020) *seaborn: statistical data visualization* [Online] Available at: https://seaborn.pydata.org/ (Accessed 14th April 2021)
+9. Learn Python (n.d.) *Pandas Basics* [Online]. Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
+10. Stack Overflow (n.d.) *Missing first row while reading from file - Python Pandas* [Online]. Available at: https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-from-file-python-pandas (Accessed 20th April 2021)
+11. International School of AI & Data Science *pd.read_csv not able to show all rows* [Online]. Available at: https://community.insaid.co/hc/en-us/community/posts/360027461213-pd-read-csv-not-able-to-show-all-rows (Accessed 20th April 2021)
 
