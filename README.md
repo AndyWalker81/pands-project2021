@@ -113,7 +113,7 @@ Each stage is completed to a working level before moving to the next. However, w
 
 ### Full Code
 
-The full code is displayed below (additional comments are included in the associated .py file). A breakdown of each section of code is provided in the following sections
+The full code is displayed below (additional comments are included in the associated .py file). A breakdown of each section of code (along with links to references) is provided in the following sections.
 
 ```python
 import pandas as pd
@@ -436,7 +436,7 @@ It is noted that the DataFrame will contain an Index running from 0 to 149.
 
 #### 3. Save Data to .txt File
 
-Next, the data is saved as irisData.txt. 
+Next, the data is saved as irisData.txt<sup>[12]</sup>. 
 
 ```python
 with open('irisData.txt', "wt") as f:
@@ -449,11 +449,9 @@ This is in a more easily-readable format than the original downloaded data set (
 
 <sub>Figure 2</sub> 
 
-References: 
-
 #### 4. Output a Summary of Each Variable
 
-A summary of the statistical data is saved as summaryIrisData.txt. 
+A summary of the statistical data is saved as summaryIrisData.txt<sup>[13]</sup>. 
 
 ```python
 summaryIrisData = irisData.describe()
@@ -464,10 +462,6 @@ with open('summaryIrisData.txt', "wt") as f:
  ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisSummaryData_txt.PNG "Iris Summary Data")
 
 <sub>Figure 3</sub> 
-
-
-References: 
-https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm
 
 #### 5.Assign Each Class of Iris to a Variable  
 
@@ -489,7 +483,7 @@ def histograms():
 histograms()
 ```
 
-Within this function are five further functions; one for each variable of the data set. 
+Within this function are five further functions; one for each variable of the data set<sup>[14]</sup>. 
 
 #### 7. Create a Function to Output Histograms for Each Variable of the Data Set
 
@@ -508,7 +502,7 @@ Each function works in the same manner:
     - x, y, and z
     - The first function creates lists based on data in the Class column. 
     - The remaining four functions create lists based on data in the remaining four columns.
-3. Using matplotlib, a stacked histogram is created using the three lists (x, y, z)
+3. Using matplotlib, a stacked histogram is created using the three lists (x, y, z)<sup>[15]</sup>
 4. The histogram is given a title, a legend, x and y labels.
 5. The histogram is saved as a .png file and outputed to the user's screen.
 
@@ -535,10 +529,6 @@ The resultant histogram from the above example is shown below:
 
 <sub>Figure 4</sub> 
 
-
-ref: https://datatofish.com/convert-pandas-dataframe-to-list/
-ref: #https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/
-
 #### 8. Create NumPy Arrays from the Data Set
 
 ```python
@@ -546,9 +536,8 @@ irisDataArray = irisData.to_numpy()
 irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
 ```
 
-Two NumPy arrays are created; one containing the complete data set (i.e. 150 rows and five columns), and one containing a single row with five columns headings. These arrays are used to create the scatter plots. 
+Two NumPy arrays are created from the DataFrame created in Step 2<sup>[16]</sup>; one containing the complete data set (i.e. 150 rows and five columns), and one containing a single row with five columns headings. These arrays are used to create the scatter plots. 
 
-ref: 
 
 #### 9. Remove the Last Column of Data and Column Heading from the Arrays
 
@@ -557,14 +546,13 @@ irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1)
 irisColumnsArrayNew = np.delete(irisColumnsArray, -1) 
 ```
 
-The last column is deleted from each of the two arrays created in the previous step. I.e. the Class column is removed. This is done because data from the Class column is not used in the scatter plots.
-
-ref: https://note.nkmk.me/en/python-numpy-delete/
+The last column is deleted from each of the two arrays created in the previous step<sup>[17]</sup>. I.e. the Class column is removed. This is done because data from the Class column is not used in the scatter plots.
 
 #### 10. Define a Function for the Scatter Plots:
 
 ```python
 def scatters():
+...    
 scatters()
 ```
 
@@ -583,14 +571,14 @@ The first function is defined as setosaSepalLength() and works as follows:
 
 1. Two variables (a and b) are set, both as 0.
 2. Using the a variable, the first column of data from the arrays is deleted (Sepal Length). This is so the program does not create a scatter plot calculating the same variable against itself.
-3. A while loop is set to run for one less times than the number of columns in the irisDataArryNew array (i.e. it will run three times).
+3. A while loop is set to run for one less times than the number of columns in the irisDataArryNew array (i.e. it will run three times)<sup>[18]</sup>.
 4. The program then takes the first column of data from the first 50 rows (i.e. *Iris setosa*) of the original data set (i.e. Sepal Length because a = 0), and the first column of data from the the data set with the first column removed (i.e. Sepal Width because b = 0). A scatter plot is created and given title. 
 5. The program then repeats Step 4 with the second 50 rows (i.e. *Iris versicolor*) of the original data set array.
 6. The program then repeats Step 4 with the third 50 rows (i.e. *Iris virginica*) of the original data set array.
 7. The plots are given x-axis label based upon the first column heading from original data set array (i.e. Sepal Length because a = 0) and y-axis label based upon the first column heading from data set array with column removed (i.e. Sepal Width because b = 0)
 9. The value for b will increase by 1. 
 10. While the value for b is lower than 3 then the loop will run another iteration.
-11. Dependant on the value of b, the scatter plots will be saved given a different .png filename. 
+11. Using the if, elif, and else statements, dependant on the value of b, the scatter plots will be saved given a different .png filename<sup>[19]</sup>. 
 12. The plots are also displayed on screen. 
 
 ```python
@@ -658,12 +646,9 @@ def sepalLengthSepalWidth():
 
 Whilst this approach does generate scatter plots with the correct data, each variable for each class of *Iris* must be typed out manually and cross-referenced to ensure that each variable is included against each other. This could lead to errors if a variable was accidently omitted or inputted incorrectly. Furthermore, whilst Fisher's *Iris* data set is relatively small with four numeric variables used, it is recognised that a larger data set might have been used. The code used in the final version of the program would allow further columns of data to be added and would be able to generate further scatter plots with relative ease with relative minor additions to the code. For example, if a new colummn was added and a new column heading was defined, a new function could simply be added with just the value of 'a' being increased by 1 and new filenames for the .png files being defined. However, using the example code from the earlier iteration would mean the manual entry and cross-referencing of variable names with a higher risk of error being made - the more variables used in the data set, the more difficult this would become. 
 
-
-ref: https://www.w3schools.com/python/python_conditions.asp
-
 #### 12. Output a Pairplot 
 
-The last section of code generates and saves a pairplot using Seaborn.
+The last section of code generates and saves a pairplot using Seaborn<sup>[20, 21, 22, 23]</sup>.
 
 ```python
 sns.pairplot(irisData, hue = "Class", diag_kind="hist")  
@@ -677,12 +662,6 @@ The resultant pairplot is shown below:
  ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Pair Plot")
 
 <sub>Figure 6</sub> 
-
-
-ref: https://seaborn.pydata.org/generated/seaborn.pairplot.html
-https://pythonbasics.org/seaborn-pairplot/ 
-https://seaborn.pydata.org/tutorial/function_overview.html
-https://www.geeksforgeeks.org/change-axis-labels-set-title-and-figure-size-to-plots-with-seaborn/
 
 ## 5. Learnings and Further Points
 
@@ -703,4 +682,15 @@ https://www.geeksforgeeks.org/change-axis-labels-set-title-and-figure-size-to-pl
 9. Learn Python (n.d.) *Pandas Basics* [Online]. Available at: https://www.learnpython.org/en/Pandas_Basics (Accessed 20th March 2021)
 10. Stack Overflow (n.d.) *Missing first row while reading from file - Python Pandas* [Online]. Available at: https://stackoverflow.com/questions/32940709/missing-first-row-while-reading-from-file-python-pandas (Accessed 20th April 2021)
 11. International School of AI & Data Science *pd.read_csv not able to show all rows* [Online]. Available at: https://community.insaid.co/hc/en-us/community/posts/360027461213-pd-read-csv-not-able-to-show-all-rows (Accessed 20th April 2021)
-
+12. W3Schools (n.d) *Python File Write* [Online]. Available at: https://www.w3schools.com/python/python_file_write.asp (Accessed 21st April 2021)
+13. TutorialsPoint (2021) *Python Pandas - Descriptive Statistics* [Online]. Available at: https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm (Accessed 20th April 2021)
+14. W3Schools (n.d) *Python Functions* [Online]. Available at: https://www.w3schools.com/python/python_functions.asp (Accessed 21st April 2021)
+15. Show Me Code (n.d.) *Create a stacked histogram in Matplotlib* [Online]. Available at: https://showmecode.info/python/matplotlib/histogram/create-stacked-histogram/ (Accessed 21st April 2021)
+16. Python Examples (n.d.) *Pandas DataFrame to NumPy Array* [Online]. Available at: https://pythonexamples.org/convert-pandas-dataframe-to-numpy-array/ (Accessed 21st April 2021)
+17. note.nkmk.me (2017) *numpy.delete(): Delete rows and columns of ndarray* [Online]. Available at: https://note.nkmk.me/en/python-numpy-delete/ (Accessed 21st April 2021)
+18. W3Schools (n.d.) *Python While Loops* [Online]. Available at: https://www.w3schools.com/python/python_while_loops.asp (Accessed 21st April 2021)
+19. W3Schools (n.d.) *Python If ... Else* [Online]. Available at: https://www.w3schools.com/python/python_conditions.asp (Accessed 21st April 2021)
+20. Seaborn (2020) *seaborn.pairplot* [Online]. Available at: https://seaborn.pydata.org/generated/seaborn.pairplot.html (Accessed 21st April 2021)
+21. Python Tutorial (2021) *Seaborn pairplot example* [Online]. Available at: https://pythonbasics.org/seaborn-pairplot/ (Accessed 21st April 2021)
+22. Seaborn (2020) *Overview of seaborn plotting functions* [Online]. Available at: https://seaborn.pydata.org/tutorial/function_overview.html (Accessed 21st April 2021)
+23. Geeks for Geeks (n.d.) *Change Axis Labels, Set Title and Figure Size to Plots with Seaborn* [Online]. Available at: https://www.geeksforgeeks.org/change-axis-labels-set-title-and-figure-size-to-plots-with-seaborn/l (Accessed 21st April 2021)
