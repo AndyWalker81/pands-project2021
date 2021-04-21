@@ -12,7 +12,7 @@ import seaborn as sns; sns.set_theme()
 
 # read dataset and put into dataframe
 irisData = pd.read_csv('bezdekIris.data', header = None)  
-irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
+irisData.columns = ['Sepal Length (cm)','Sepal Width (cm)','Petal Length (cm)','Petal Width (cm)','Class']
 pd.set_option('display.max_rows', 150)
 
 # save dataset to text file
@@ -47,53 +47,53 @@ def histograms():
          plt.show()
      
      def sepalLength():
-          x = irisSetosa["Sepal Length"]
-          y = irisVersicolor["Sepal Length"]
-          z = irisVirginica["Sepal Length"]
+          x = irisSetosa["Sepal Length (cm)"]
+          y = irisVersicolor["Sepal Length (cm)"]
+          z = irisVirginica["Sepal Length (cm)"]
 
           plt.hist([x, y, z], stacked = True)
           plt.title("Frequency of Sepal Length")
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
-          plt.xlabel("Sepal Length")
+          plt.xlabel("Sepal Length (cm)")
           plt.ylabel("Frequency")
           plt.savefig("sepalLength.png")
           plt.show()
      
      def sepalWidth():
-          x = irisSetosa["Sepal Width"]
-          y = irisVersicolor["Sepal Width"]
-          z = irisVirginica["Sepal Width"]
+          x = irisSetosa["Sepal Width (cm)"]
+          y = irisVersicolor["Sepal Width (cm)"]
+          z = irisVirginica["Sepal Width (cm)"]
      
           plt.hist([x, y, z], stacked = True) 
           plt.title("Frequency of Sepal Width")
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
-          plt.xlabel("Sepal Width")
+          plt.xlabel("Sepal Width (cm)")
           plt.ylabel("Frequency")
           plt.savefig("sepalWidth.png")
           plt.show()
 
      def petalLength():
-          x = irisSetosa["Petal Length"]
-          y = irisVersicolor["Petal Length"]
-          z = irisVirginica["Petal Length"]
+          x = irisSetosa["Petal Length (cm)"]
+          y = irisVersicolor["Petal Length (cm)"]
+          z = irisVirginica["Petal Length (cm)"]
      
           plt.hist([x, y, z], stacked = True) 
           plt.title("Frequency of Petal Length")
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
-          plt.xlabel("Petal Length")
+          plt.xlabel("Petal Length (cm)")
           plt.ylabel("Frequency")
           plt.savefig("petalLength.png")
           plt.show()
 
      def petalWidth():
-          x = irisSetosa["Petal Width"]
-          y = irisVersicolor["Petal Width"]
-          z = irisVirginica["Petal Width"]
+          x = irisSetosa["Petal Width (cm)"]
+          y = irisVersicolor["Petal Width (cm)"]
+          z = irisVirginica["Petal Width (cm)"]
      
           plt.hist([x, y, z], stacked = True) 
           plt.title("Frequency of Petal Width")
           plt.legend(["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
-          plt.xlabel("Petal Width")
+          plt.xlabel("Petal Width (cm)")
           plt.ylabel("Frequency")
           plt.savefig("petalWidth.png")
           plt.show()
@@ -108,7 +108,7 @@ histograms()
 
 # create numpy arrays from dataset
 irisDataArray = irisData.to_numpy()
-irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
+irisColumnsArray = ('Sepal Length (cm)', 'Sepal Width (cm)','Petal Length (cm)','Petal Width (cm)','Class')
 
 # remove last column of data and column heading (Class)
 irisDataArrayNew = np.delete(irisDataArray, -1, axis = 1) # deletes last column of data (Class) 
