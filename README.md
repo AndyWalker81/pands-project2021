@@ -423,7 +423,7 @@ The first stage of the program is to import the data from the downloaded files a
 
 ```python
 irisData = pd.read_csv('bezdekIris.data', header = None)  
-irisData.columns = ['Sepal Length','Sepal Width','Petal Length','Petal Width','Class']
+irisData.columns = ['Sepal Length (cm)','Sepal Width (cm)','Petal Length (cm)','Petal Width (cm)','Class']
 pd.set_option('display.max_rows', 150)
 ```
 
@@ -532,7 +532,7 @@ The resultant histogram from the above example is shown below:
 
 ```python
 irisDataArray = irisData.to_numpy()
-irisColumnsArray = ('Sepal Length', 'Sepal Width','Petal Length','Petal Width','Class')
+irisColumnsArray = ('Sepal Length (cm)', 'Sepal Width (cm)','Petal Length (cm)','Petal Width (cm)','Class (cm)')
 ```
 
 Two NumPy arrays are created from the DataFrame created in Step 2<sup>[16]</sup>; one containing the complete data set (i.e. 150 rows and five columns), and one containing a single row with five columns headings. These arrays are used to create the scatter plots. 
