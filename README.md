@@ -658,7 +658,7 @@ plt.show()
 
 The resultant pairplot is shown below:
 
- ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/matrix2.png "Pair Plot")
+ ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/matrix.png "Pair Plot")
 
 <sub>Figure 6</sub> 
 
