@@ -629,7 +629,7 @@ Following the completion of this function, two further functions are run with th
 
 A resultant scatter plot from the above example is shown below:
 
-![alt text](https://github.com/AndyWalker81/PANDS/blob/main/scatter1.png "Distribution of Variables")
+![alt text](https://github.com/AndyWalker81/PANDS/blob/main/scatter1_2.png "Distribution of Variables")
 
 <sub>Figure 5</sub> 
 
@@ -658,7 +658,7 @@ plt.show()
 
 The resultant pairplot is shown below:
 
- ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Pair Plot")
+ ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/matrix2.png "Pair Plot")
 
 <sub>Figure 6</sub> 
 
