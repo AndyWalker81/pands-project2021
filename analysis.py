@@ -1,7 +1,7 @@
 # analysis.py
 # Submission for the 20-21: 52167 -- Programming and Scripting Module
 # Lecturer -- Andrew Beatty (andrew.beatty@gmit.ie)
-# A program to investigate Fisher's iris data set and output the results to files. 
+# A program to investigate Fisher's Iris data set and output the results to files. 
 # Author: Andrew Walker (G00398788@gmit.ie)
 
 # import libraries
@@ -125,7 +125,7 @@ def scatters():
         irisColumnsArrayNewTwo = np.delete(irisColumnsArrayNew, a) # deletes first column heading (Sepal Length)    
         # this is so that the program does not calculate the same variable against itself    
         
-        while b < (len(irisColumnsArrayNew) - 1):   # e.g. it runs three times
+        while b < (len(irisColumnsArrayNew) - 1):   # i.e. it runs three times
             x = irisDataArray[0:50:,a] # takes the first column of data from original data set (Sepal Length)
             y = irisDataArrayNewTwo[0:50,b] # takes first column of data from data set with Sepal Length data removed (i.e. Sepal Width)
             plt.title("Distribution of Variables")   

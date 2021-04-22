@@ -19,7 +19,7 @@ The output from the project is a program called analysis.py that:
 
 ## 2. Introduction to the Data Set
 
-Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1]</sup>. The data set contains of a total of 150 instances consisting of 50 samples from each of three species of Iris (*Iris setosa*, *Iris virginica* and *Iris versicolor*). The data set contains four numeric attributes measured in Fisher's study and one predictive attribute for each instance:
+Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1])</sup>. The data set contains of a total of 150 instances consisting of 50 samples from each of three species of Iris (*Iris setosa*, *Iris virginica* and *Iris versicolor*). The data set contains four numeric attributes measured in Fisher's study and one predictive attribute for each instance:
 
 - sepal length in centimetres (cm)
 - sepal width in centimetres (cm)
@@ -662,7 +662,11 @@ The resultant pairplot is shown below:
 
 <sub>Figure 6</sub> 
 
-## 5. Learnings and Further Points
+## 5. Output Plots
+
+The full 
+
+## 6. Learnings and Further Points
 
 
 ## 6. Conclusion
