@@ -7,7 +7,7 @@
 
 ## 1. Summary 
 
-This file is the submission README file for the 2021 Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, the methodology used including examples of interesting analsyes that others have pursued, the full code, a breakdown of the code including explanations, references, and examples of outputs, further learnings, and a brief conclusion. Please note that no conclusions are made in relation to the data set itself (e.g. on the distribution of variables) as the Programming and Scripting module has not covered such topics to allow such analysis. 
+This file is the submission README file for the 2021 Programming and Scripting (PANDS) Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, the methodology used including examples of interesting analsyes that others have pursued, the full code, a breakdown of the code including explanations, references, and examples of outputs, further learnings, and a brief conclusion. Please note that no conclusions are made in relation to the data set itself (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis. 
 
 The output from the project is a program called analysis.py that:
 
@@ -39,9 +39,29 @@ The project requires research in relation to the data set, downloading of the da
 
 ### Research and Examples of Previous Analyses 
 
+The following projects conducted by other individuals were used to provide ideas on how to approach the project. 
+
 1. https://github.com/RitRa/Project2018-iris
-https://www.sisense.com/blog/data-visualizations-in-python-and-r/
-https://github.com/vwalsh86/Iris-Data-Set-Project
+
+- This project uses libraries including NumPy, Pandas, and Seaborn.
+- A statistics table is provided. 
+- A number of different types of charts are outputted including box plots.  
+- The project states that machine learning is used on the dataset. 
+
+2. https://www.sisense.com/blog/data-visualizations-in-python-and-r/
+
+- Provides examples of different types of charts. 
+
+3. https://github.com/vwalsh86/Iris-Data-Set-Project
+
+- A statistics table is provided. 
+- The minumum, maximum, and mean values are calculated for the dataset and discussed. 
+- A number of different types of charts are outputted including box plots.  
+- Conclusions are drawn in relation to the data set.
+
+
+Research into other approaches has identified that pair plots are useful  particular relevance for PANDS project is the pairplot which allows data to be easily visualised. The previous projects also used other types of charts such as box plots. However, as the Project instructions only refered to histograms and scatter plot it is decided to discount any other type of chart. The research also shows that different libaries can be used and there are different ways of approaching the task which can provide similar results. Whilst the third previous project draws conclusions on the data set, it is decided that no conclusions are made in relation to the data set for this project (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis to be undertaken. 
+
 
 ### Downloading the Data Set
 
@@ -59,12 +79,18 @@ The former file is a description of the data set; the latter two files contain t
 
 The UCI repository notes that the iris.data file contains errors in two instances in which the data does not match with Fisher's original publication. These errors do not occur in the data contained within the bezdekIris.data file. Therefore, the bezdekIris.data file is used in this project. 
 
-### Required Outputs
+### Outputs
 
-Based on the project task and research into how previous analyses were conducted, it was determined that the output would be:
+Based on the project instructions and research into how previous analyses were conducted, it was determined that the output would be:
 
 - A summary output of the data set (summaryIrisData.txt).
-    - Uncertainty as to what exactly was required. Therefore......1) summary of mean etc. 2) more easily readable table
+    - The Project instructions did not specify what was required in terms of a summary. Therefore, a summary of the numerical data was provided for each variable which consisted of:
+        - Count
+        - Mean
+        - Standard deviation
+        - Minumum value
+        - Maximum value
+        - Interquartile range
 
 - Five histograms showing the freqency that each of the following variables occured:
     - Class (irisClass.png)
@@ -720,6 +746,14 @@ The full compliment of five histograms, twelve scatter plots, and one pair plot 
 
 ## 6. Learnings and Further Points
 
+- Use of libraries
+- Different methods to acheive same result
+- Iterative process (e.g. on scatter plots)
+- The scatter plot programming is perhaps more complex than necessary for this particular data set, but was seen to potentially reduce errors when inputting the code due to the repetitive nature of first iteration. 
+- Use of GitHub
+- Use of Markdown
+- Machine learning could be used
+- Nothing considered to be a major issue
 
 ## 7. Conclusion
 
