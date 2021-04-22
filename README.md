@@ -524,7 +524,7 @@ The following code is for the Class column as an example:
 
 The resultant histogram from the above example is shown below:
 
- ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/irisClass.png "Frequency of *Iris* Class")
+ ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/irisClass.png "Frequency of *Iris* Class")
 
 <sub>Figure 4</sub> 
 
@@ -629,7 +629,7 @@ Following the completion of this function, two further functions are run with th
 
 A resultant scatter plot from the above example is shown below:
 
-![alt text](https://github.com/AndyWalker81/PANDS/blob/main/scatter1_2.png "Distribution of Variables")
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter1.png "Distribution of Variables")
 
 <sub>Figure 5</sub> 
 
@@ -658,18 +658,70 @@ plt.show()
 
 The resultant pairplot is shown below:
 
- ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/matrix.png "Pair Plot")
+ ![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Pair Plot")
 
 <sub>Figure 6</sub> 
 
 ## 5. Output Plots
 
-The full 
+The full compliment of five histograms, twelve scatter plots, and one pair plot are shown below:
+
+### Histograms
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/irisClass.png "Frequency of Class")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/sepalLength.png "Frequency of Sepal Length")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/sepalWidth.png "Frequency of Sepal Width")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/petalLength.png "Frequency of Petal Length")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/petalWidth.png "Frequency of Petal Width")
+
+
+### Scatter Plots
+
+#### Sepal Length
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter1.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter2.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter3.png "Distribution of Variables")
+
+#### Sepal Width
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter4.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter5.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter6.png "Distribution of Variables")
+
+#### Petal Length
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter7.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter8.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter9.png "Distribution of Variables")
+
+#### Petal Width
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter10.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter11.png "Distribution of Variables")
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/scatter12.png "Distribution of Variables")
+
+### Pair Plot
+
+![alt text](https://github.com/AndyWalker81/pands-project2021/blob/main/matrix.png "Pair Plot")
+
 
 ## 6. Learnings and Further Points
 
 
-## 6. Conclusion
+## 7. Conclusion
 
 
 ## 7. References
