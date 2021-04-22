@@ -7,7 +7,7 @@
 
 ## 1. Summary 
 
-This file is the submission README file for the 2021 Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, scope, methodology, examples of interesting analsyes that others have pursued, code, references, and comments. 
+This file is the submission README file for the 2021 Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, the methodology used including examples of interesting analsyes that others have pursued, the full code, a breakdown of the code including explanations, references, and examples of outputs, further learnings, and a brief conclusion. Please note that no conclusions are made in relation to the data set itself (e.g. on the distribution of variables) as the Programming and Scripting module has not covered such topics to allow such analysis. 
 
 The output from the project is a program called analysis.py that:
 
@@ -97,7 +97,7 @@ Based on the project task and research into how previous analyses were conducted
 - A Pair Plot (matrix.png)
     - Reviews of previous analyses show a pair plot (or scatter matrix) to be a useful method of showing the visual data. A pair plot consists of several pair-wise scatter plots of variables presented in a matrix format, allowing for an instant visualisation of data<sup>[3]</sup>. The resultant pair plot from the program can be seen in Figure 6.
 
-It is considered that there is some ambiguity as to what was expected to be 'saved' or 'outputed', based on the wording of the Project instructions. Therefore, it is decided to save both histograms and scatter plots to files, and to show both histograms and scatter plots on the user's screen. 
+The project instructions did not specify exactly what was expected as outputs of the code. Therefore, it is decided to save the plots to files as well as to display them on the user's screen when the program is run. All of the output files are also pushed to the relevant folder on GitHub. 
    
 ### Programming the Code
 
@@ -724,7 +724,7 @@ The full compliment of five histograms, twelve scatter plots, and one pair plot 
 ## 7. Conclusion
 
 
-## 7. References
+## 8. References
 
 1. Fisher, R. A., (1936) The use of multiple measurements in taxonomic problems, *Annals of Eugenics* [Online] Available at: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1936.tb02137.x (Accessed 20th March 2021)
 2. UCI (n.d.) *Iris Data Set*, [Online] Available at: http://archive.ics.uci.edu/ml/datasets/Iris (Accessed 20th March 2021)
