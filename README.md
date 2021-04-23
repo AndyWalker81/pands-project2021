@@ -81,10 +81,10 @@ The UCI repository notes that the iris.data file contains errors in two instance
 
 ### Outputs
 
-Based on the project instructions and research into how previous analyses were conducted, it was determined that the output would be:
+Based on the project instructions and research into how previous analyses were conducted, it was determined that the output would be the following (filenames shown in brackets):
 
 - A summary output of the data set (summaryIrisData.txt).
-    - The Project instructions did not specify what was required in terms of a summary. Therefore, a summary of the numerical data was provided for each variable which consisted of:
+    - The Project instructions did not specify what was required in terms of a summary. Therefore, it is decided that a summary of the numerical data be provided for each variable. This will consist of:
         - Count
         - Mean
         - Standard deviation
@@ -746,14 +746,29 @@ The full compliment of five histograms, twelve scatter plots, and one pair plot 
 
 ## 6. Learnings and Further Points
 
-- Use of libraries
-- Different methods to acheive same result
-- Iterative process (e.g. on scatter plots)
-- The scatter plot programming is perhaps more complex than necessary for this particular data set, but was seen to potentially reduce errors when inputting the code due to the repetitive nature of first iteration. 
-- Use of GitHub
-- Use of Markdown
-- Machine learning could be used
-- Nothing considered to be a major issue
+### Use of libraries
+
+The Project instructions allowed for any Python libraries to be used. As well as Pands, NumPy, and Matplotlib which had been covered in the module lectures, Seaborn was also used. Conducting the project has given insight into the range of available libraries and the different tasks which they are able to perform. 
+
+### Different methods to acheive same result
+
+The iterative process undertaken showed that there are different ways to acheive the same or similar result. As a novice Python programmer, rewriting code as the program developed is considered to have allowed the program to improve. For example, the 'automation' of the outputting of the scatter plots. It is recognised that the scatter plot programming is perhaps more complex than necessary for this particular data set, but is considered that the approach taken could reduce errors when writing the code, even it the code itself is more complex. 
+
+### Simpler Approach 
+
+It is recognised that the pair plot shows the same visual information as the individual histograms and scatter plots (except that the pair plot does not show the frequency of *Iris* class information). Research shows that pair plots (or scatter matrices) can be produced with only several lines of code. In a 'real-life' situation, it would perhaps be a better approach to only output a pair plot instead of the individual charts. However, for the purposes of demonstrating coding ability, and the fact that the Project instructions implied that the code might ouput individual charts, it was decided to show both individual plots and the pair plot. 
+
+### Use of GitHub
+
+The Project allowed development of skills using Github, which had never been used before prior to the module starting. However, it is recognised that a more consisent approach or nomenclature could be developed in the context of committing files to Github.  
+
+### Use of Markdown
+
+The Project allowed development of skills using Markdown, which had never been used before prior to this project starting. 
+
+### Machine learning
+
+The review of previous analyses showed that Machine Learning could be applied to this project. Whilst, the author has no prior experience with Machine Learning, it is considered that more research could be done in this field. 
 
 ## 7. Conclusion
 
