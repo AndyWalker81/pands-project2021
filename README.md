@@ -17,6 +17,8 @@ The output from the project is a program called analysis.py that:
 - saves a total of twelves scatterplots - one for each pair of numeric variables - to a separate .png file and displays each scatterplot on the user's screen,
 - saves a pair plot showing a visual representation of the numeric variables and displays the pair plot on the user's screen.
 
+This is the author's first coding project of this scale. 
+
 ## 2. Introduction to the Data Set
 
 Fisher's *Iris* data set is a multivariate data set first published by R A Fisher in his 1936 paper *The use of multiple measurements in taxonomic problems*<sup>[1])</sup>. The data set contains of a total of 150 instances consisting of 50 samples from each of three species of Iris (*Iris setosa*, *Iris virginica* and *Iris versicolor*). The data set contains four numeric attributes measured in Fisher's study and one predictive attribute for each instance:
@@ -35,7 +37,11 @@ The analysis.py file developed for this project analyses the data set and output
 ## 3. Methodology
 
 ### Introduction
-The project requires research in relation to the data set, downloading of the data set, and writing the program code, along with additional tasks such as referencing. The program itself is required to perform several different functions including outputting a summary of each variable, saving histograms of each variable, and outputting a scatter plot for each variable. Therefore, the project is broken down into several smaller stages, as detailed below. 
+The Project instructions state that the data set must be researched and documentation and Python code written. However, the instructions do not specify exactly what is required from the code; instead a number of outputs are suggested and advice is given on the minimum expections and what might be expected from a better project. 
+
+The suggested approach to the project requires research in relation to the data set, downloading of the data set, and writing the program code, along with additional tasks such as referencing. The program itself is required to perform several different functions including outputting a summary of each variable, saving histograms of each variable, and outputting a scatter plot for each variable. 
+
+The approach taken is to brake down the Project into several smaller stages, as detailed below. 
 
 ### Research and Examples of Previous Analyses 
 
@@ -62,16 +68,15 @@ The following projects conducted by other individuals were used to provide ideas
 
 Research into other approaches has identified that pair plots are useful  particular relevance for PANDS project is the pairplot which allows data to be easily visualised. The previous projects also used other types of charts such as box plots. However, as the Project instructions only refered to histograms and scatter plot it is decided to discount any other type of chart. The research also shows that different libaries can be used and there are different ways of approaching the task which can provide similar results. Whilst the third previous project draws conclusions on the data set, it is decided that no conclusions are made in relation to the data set for this project (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis to be undertaken. 
 
-
 ### Downloading the Data Set
 
-The data set used is taken from the UCI Machine Learning Repository<sup>[2]</sup>, as referenced in the instruction document for the project. The data consists of three files:
+The data set used is taken from the UCI Machine Learning Repository<sup>[2]</sup>, as referenced in the instruction document for the Project. This download consists of three files:
 
 - iris.names
 - bezdekIris.data
 - iris.data
     
-The former file is a description of the data set; the latter two files contain the data. The data is in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below as an example:
+The former file is a description of the data set; the latter two files contain the data. These data are in Comma Separated Values (CSV) format. A CSV file is a plain text file that contains a list of data separated by commas. The first five lines of data are shown below as an example:
 
 ![alt text](https://github.com/AndyWalker81/PANDS/blob/main/firstFiveRows.PNG "Iris Data")
 
@@ -81,7 +86,7 @@ The UCI repository notes that the iris.data file contains errors in two instance
 
 ### Outputs
 
-Based on the project instructions and research into how previous analyses were conducted, it was determined that the output would be the following (filenames shown in brackets):
+Based on the Project instructions and research into how previous analyses were conducted, it was determined that the output would be the following (filenames shown in brackets):
 
 - A summary output of the data set (summaryIrisData.txt).
     - The Project instructions did not specify what was required in terms of a summary. Therefore, it is decided that a summary of the numerical data be provided for each variable. This will consist of:
@@ -123,7 +128,7 @@ Based on the project instructions and research into how previous analyses were c
 - A Pair Plot (matrix.png)
     - Reviews of previous analyses show a pair plot (or scatter matrix) to be a useful method of showing the visual data. A pair plot consists of several pair-wise scatter plots of variables presented in a matrix format, allowing for an instant visualisation of data<sup>[3]</sup>. The resultant pair plot from the program can be seen in Figure 6.
 
-The project instructions did not specify exactly what was expected as outputs of the code. Therefore, it is decided to save the plots to files as well as to display them on the user's screen when the program is run. All of the output files are also pushed to the relevant folder on GitHub. 
+The Project instructions did not specify exactly what was expected as outputs of the code. Therefore, it is decided to save the plots to files as well as to display them on the user's screen when the program is run. All of the output files are also pushed to the relevant folder on GitHub. 
    
 ### Programming the Code
 
@@ -746,11 +751,11 @@ The full compliment of five histograms, twelve scatter plots, and one pair plot 
 
 ## 6. Learnings and Further Points
 
-### Use of libraries
+### Use of Libraries
 
 The Project instructions allowed for any Python libraries to be used. As well as Pands, NumPy, and Matplotlib which had been covered in the module lectures, Seaborn was also used. Conducting the project has given insight into the range of available libraries and the different tasks which they are able to perform. 
 
-### Different methods to acheive same result
+### Different Methods to Achieve Similar Result
 
 The iterative process undertaken showed that there are different ways to acheive the same or similar result. As a novice Python programmer, rewriting code as the program developed is considered to have allowed the program to improve. For example, the 'automation' of the outputting of the scatter plots. It is recognised that the scatter plot programming is perhaps more complex than necessary for this particular data set, but is considered that the approach taken could reduce errors when writing the code, even it the code itself is more complex. 
 
@@ -766,12 +771,13 @@ The Project allowed development of skills using Github, which had never been use
 
 The Project allowed development of skills using Markdown, which had never been used before prior to this project starting. 
 
-### Machine learning
+### Machine Learning
 
 The review of previous analyses showed that Machine Learning could be applied to this project. Whilst, the author has no prior experience with Machine Learning, it is considered that more research could be done in this field. 
 
 ## 7. Conclusion
 
+As the first coding project of this scale conducted by the author, it was a good experience. No major issues needed to be overcome, but there were also challenges such as in the development of the 'automatic' outputs of the scatter plots. The Project has given the author more confidence in their coding ability and has shown what can be acheived with the use of Python libraries. In addition, whilst no formal conclusions about the data itself were drawn for the Project and detailed in this document, it was interesting to look at the visual data and think about what it represents. 
 
 ## 8. References
 
