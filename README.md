@@ -7,9 +7,9 @@
 
 ## 1. Summary 
 
-This file is the submission README file for the 2021 Programming and Scripting (PANDS) Project concerned with Fisher's *Iris* data set. This file contains an introduction to the project and the data set, the methodology used including examples of interesting analsyes that others have pursued, the full code, a breakdown of the code including explanations, references, and examples of outputs, further learnings, and a brief conclusion. Please note that no conclusions are made in relation to the data set itself (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis. 
+This file is the submission README file for the 2021 Programming and Scripting (PANDS) Project concerned with Fisher's *Iris* data set. This file contains an introduction to the Project and the data set, the methodology used including examples of interesting analyses that others have pursued, the full code, a breakdown of the code including explanations, references, and examples of outputs, further learnings, and a brief conclusion. Please note that no conclusions are made in relation to the data set itself (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis or conclusions to be drawn. 
 
-The output from the project is a program called analysis.py that:
+The output from the project is a program writing in Python called analysis.py that:
 
 - outputs a summary of each variable from the data set to a single text file,
 - outputs a text file showing the original data in a more easily-readable format than in the original file,
@@ -65,8 +65,7 @@ The following projects conducted by other individuals were used to provide ideas
 - A number of different types of charts are outputted including box plots.  
 - Conclusions are drawn in relation to the data set.
 
-
-Research into other approaches has identified that pair plots are useful  particular relevance for PANDS project is the pairplot which allows data to be easily visualised. The previous projects also used other types of charts such as box plots. However, as the Project instructions only refered to histograms and scatter plot it is decided to discount any other type of chart. The research also shows that different libaries can be used and there are different ways of approaching the task which can provide similar results. Whilst the third previous project draws conclusions on the data set, it is decided that no conclusions are made in relation to the data set for this project (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis to be undertaken. 
+Research into other approaches has identified that of particular relevance for the PANDS Project are pair plots which allow data to be easily visualised. The previous projects also used other types of charts such as box plots. However, as the Project instructions only refered to histograms and scatter plots, it is decided to discount any other type of chart. The research also shows that different Python libaries can be used and there are different ways of approaching the task which can provide similar results. Whilst the third previous Project draws conclusions on the data set, it is decided that no conclusions are made in relation to the data set for this project (e.g. on the distribution of variables or statistical analysis) as the Programming and Scripting module has not covered such topics to allow such analysis to be undertaken. 
 
 ### Downloading the Data Set
 
@@ -86,7 +85,7 @@ The UCI repository notes that the iris.data file contains errors in two instance
 
 ### Outputs
 
-Based on the Project instructions and research into how previous analyses were conducted, it was determined that the output would be the following (filenames shown in brackets):
+Based on the Project instructions and research into how previous analyses were conducted, it was determined that the output would be the following (output filenames shown in brackets):
 
 - A summary output of the data set (summaryIrisData.txt).
     - The Project instructions did not specify what was required in terms of a summary. Therefore, it is decided that a summary of the numerical data be provided for each variable. This will consist of:
@@ -137,14 +136,15 @@ Writing the program code is broken down into smaller stages, with the aim to com
 1. Import data set, save data set, output summary
 2. Output histograms
 3. Output scatter plots
+4. Output pair plot
 
-Each stage is completed to a working level before moving to the next. However, writing the code is an iterative process whereby if it is considered that later improvements can be made to the working code, then the code is then amended or re-written. Examples of this might be if it is considered that the importing of a library might improve or make the code more efficient, or simply if it is considered that the output charts could be made more attractive if the code was re-written. It is recogised that this approach might involve the re-writing of the same pieces of code, but as a newcomer to Python it is considered that this approach would allow ongoing development and improvement to the program as knowledge grew. 
+Each stage is completed to a working level before moving to the next. However, writing the code is an iterative process whereby if it is considered that later improvements can be made to the working code, then the code is then amended or re-written. Examples of this might be if it is considered that the importing of a library might improve or make the code more efficient, or simply if it is considered that the output charts could be made more attractive if the code was re-written. It is recogised that this approach might involve the re-writing of the same pieces of code, but as a newcomer to Python it is considered that this approach would allow ongoing development and improvement to the program as knowledge grows. 
 
 ## 4. The Program Code
 
 ### Full Code
 
-The full code is displayed below (additional comments are included in the associated .py file). A breakdown of each section of code (along with links to references) is provided in the following sections.
+The full code is displayed below (additional comments are included in the associated analysis.py file). A breakdown of each section of code (along with links to references) is provided in the following sections.
 
 ```python
 import pandas as pd
@@ -525,17 +525,6 @@ Five further functions are created within the histogram function:
 4. petalLength()
 5. petalWidth()
 
-Each function works in the same manner:
-
-1. The column headings were previously defined in Step 1. 
-2. A further three lists are defined from the lists created in Step 5. 
-    - x, y, and z
-    - The first function creates lists based on data in the Class column. 
-    - The remaining four functions create lists based on data in the remaining four columns.
-3. Using matplotlib, a stacked histogram is created using the three lists (x, y, z)<sup>[15]</sup>
-4. The histogram is given a title, a legend, x and y labels.
-5. The histogram is saved as a .png file and outputed to the user's screen.
-
 The following code is for the Class column as an example:
 
 ```python
@@ -552,6 +541,17 @@ The following code is for the Class column as an example:
          plt.savefig("irisClass.png")
          plt.show()
 ```
+
+Each function works in the same manner:
+
+1. The column headings were previously defined in Step 1. 
+2. A further three lists are defined from the lists created in Step 5. 
+    - x, y, and z
+    - The first function creates lists based on data in the Class column. 
+    - The remaining four functions create lists based on data in the remaining four columns.
+3. Using matplotlib, a stacked histogram is created using the three lists (x, y, z)<sup>[15]</sup>
+4. The histogram is given a title, a legend, x and y labels.
+5. The histogram is saved as a .png file and outputed to the user's screen.
 
 The resultant histogram from the above example is shown below:
 
@@ -597,19 +597,7 @@ Four further functions are created within the scatters function:
 3. setosaPetalLength()
 4. setosaPetalWidth()
 
-The first function is defined as setosaSepalLength() and works as follows:
-
-1. Two variables (a and b) are set, both as 0.
-2. Using the a variable, the first column of data from the arrays is deleted (Sepal Length). This is so the program does not create a scatter plot calculating the same variable against itself.
-3. A while loop is set to run for one less times than the number of columns in the irisDataArryNew array (i.e. it will run three times)<sup>[18]</sup>.
-4. The program then takes the first column of data from the first 50 rows (i.e. *Iris setosa*) of the original data set (i.e. Sepal Length because a = 0), and the first column of data from the the data set with the first column removed (i.e. Sepal Width because b = 0). A scatter plot is created and given title. 
-5. The program then repeats Step 4 with the second 50 rows (i.e. *Iris versicolor*) of the original data set array.
-6. The program then repeats Step 4 with the third 50 rows (i.e. *Iris virginica*) of the original data set array.
-7. The plots are given x-axis label based upon the first column heading from original data set array (i.e. Sepal Length because a = 0) and y-axis label based upon the first column heading from data set array with column removed (i.e. Sepal Width because b = 0)
-9. The value for b will increase by 1. 
-10. While the value for b is lower than 3 then the loop will run another iteration.
-11. Using the if, elif, and else statements, dependant on the value of b, the scatter plots will be saved given a different .png filename<sup>[19]</sup>. 
-12. The plots are also displayed on screen. 
+The following code is to produce scatter plots of Sepal Length against the other three numerical varibales, as an example:
 
 ```python
 def setosaSepalLength():
@@ -652,6 +640,20 @@ def setosaSepalLength():
             b = (b+1) 
 ```
 
+This example function is defined as setosaSepalLength() and works as follows:
+
+1. Two variables (a and b) are set, both as 0.
+2. Using the a variable, the first column of data from the arrays is deleted (Sepal Length). This is so the program does not create a scatter plot calculating the same variable against itself.
+3. A while loop is set to run for one less times than the number of columns in the irisDataArryNew array (i.e. it will run three times)<sup>[18]</sup>.
+4. The program then takes the first column of data from the first 50 rows (i.e. *Iris setosa*) of the original data set (i.e. Sepal Length because a = 0), and the first column of data from the the data set with the first column removed (i.e. Sepal Width because b = 0). A scatter plot is created and given title. 
+5. The program then repeats Step 4 with the second 50 rows (i.e. *Iris versicolor*) of the original data set array.
+6. The program then repeats Step 4 with the third 50 rows (i.e. *Iris virginica*) of the original data set array.
+7. The plots are given x-axis label based upon the first column heading from original data set array (i.e. Sepal Length because a = 0) and y-axis label based upon the first column heading from data set array with column removed (i.e. Sepal Width because b = 0)
+9. The value for b will increase by 1. 
+10. While the value for b is lower than 3 then the loop will run another iteration.
+11. Using the if, elif, and else statements, dependant on the value of b, the scatter plots will be saved given a different .png filename<sup>[19]</sup>. 
+12. The plots are also displayed on screen. 
+
 Therefore, the setosaSepalLength() function creates three separate scatter plots, with the Sepal Length as the x-axis on each with and the other numeric variables as the y-axis on each. As the a variable was 0, the first column was not included in the data. This meant that Sepal Length was not plotted against Sepal Length.
 
 Following the setosaSepalLength() function completing, the code then runs a function for the next numeric variable (i.e. Sepal Width). This is similar to the setosaSepalLength() function except that the value for a increases by 1 (i.e. a now equals 1). This means that the second column is deleted from the data set arrays (i.e. Sepal Width). This is so the program does not create a scatter plot calculating the same variable against itself. In addition, the outputted .png files are saved as individual filenames, differing from the previous function.
@@ -674,7 +676,7 @@ def sepalLengthSepalWidth():
                plt.show()
 ```
 
-Whilst this approach does generate scatter plots with the correct data, each variable for each class of *Iris* must be typed out manually and cross-referenced to ensure that each variable is included against each other. This could lead to errors if a variable was accidently omitted or inputted incorrectly. Furthermore, whilst Fisher's *Iris* data set is relatively small with four numeric variables used, it is recognised that a larger data set might have been used. The code used in the final version of the program would allow further columns of data to be added and would be able to generate further scatter plots with relative ease with relative minor additions to the code. For example, if a new colummn was added and a new column heading was defined, a new function could simply be added with just the value of 'a' being increased by 1 and new filenames for the .png files being defined. However, using the example code from the earlier iteration would mean the manual entry and cross-referencing of variable names with a higher risk of error being made - the more variables used in the data set, the more difficult this would become. 
+Whilst this approach does generate scatter plots with the correct data, each variable for each class of *Iris* must be typed out manually and cross-referenced to ensure that each variable is included against each other. This could lead to errors if a variable was accidently omitted or inputted incorrectly; it was felt there is a high possibility of this happening due to the repetative nature of the inputting of the names of variables. Furthermore, whilst Fisher's *Iris* data set is relatively small with four numeric variables used, it is recognised that a larger data set might have been used. The code used in the final version of the program would allow further columns of data to be added and would be able to generate further scatter plots with relative ease with relative minor additions to the code. For example, if a new colummn was added and a new column heading was defined, a new function could simply be added with just the value of 'a' being increased by 1 and new filenames for the .png files being defined. However, using the example code from the earlier iteration would mean the manual entry and cross-referencing of variable names with a higher risk of error being made - the more variables used in the data set, the more difficult this would become. 
 
 #### 12. Output a Pairplot 
 
@@ -769,7 +771,7 @@ The Project allowed development of skills using Github, which had never been use
 
 ### Use of Markdown
 
-The Project allowed development of skills using Markdown, which had never been used before prior to this project starting. 
+The Project allowed development of skills using Markdown (to format this readme file), which had never been used before prior to this project starting. 
 
 ### Machine Learning
 
@@ -777,7 +779,7 @@ The review of previous analyses showed that Machine Learning could be applied to
 
 ## 7. Conclusion
 
-As the first coding project of this scale conducted by the author, it was a good experience. No major issues needed to be overcome, but there were also challenges such as in the development of the 'automatic' outputs of the scatter plots. The Project has given the author more confidence in their coding ability and has shown what can be acheived with the use of Python libraries. In addition, whilst no formal conclusions about the data itself were drawn for the Project and detailed in this document, it was interesting to look at the visual data and think about what it represents. 
+As the first coding project of this scale conducted by the author, it was a good experience. No major issues needed to be overcome but there were also challenges such as in the development of the 'automatic' outputs of the scatter plots. The Project has given the author more confidence in their coding ability and has shown what can be acheived with the use of Python libraries. In addition, whilst no formal conclusions about the data itself were drawn for the Project and detailed in this document, it was interesting to look at the visual data and think about what it represents. 
 
 ## 8. References
 
